@@ -100,7 +100,7 @@ export default async function AboutPage({
                     />
                   </div>
                   <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                    <h2 className="font-display text-[length:var(--text-h2)] leading-tight tracking-tight text-ink">
+                    <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] tracking-tight text-ink">
                       {member.name}
                     </h2>
                     <p className="eyebrow mt-2 text-brand-600">{member.role}</p>

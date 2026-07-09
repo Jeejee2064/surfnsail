@@ -1,31 +1,30 @@
 @import "tailwindcss";
 
 /*
- * Design tokens — Surfnsail
- * Palette: deep navy (matches the logo mark) + turquoise lagoon accent +
- * cool off-white/bone neutrals. Mostly light & airy, with navy sections
- * for contrast.
+ * Design tokens — Surfnsail (redesign)
+ * Palette ported from reference-design: deep ocean/navy/deep darks +
+ * gold/teal dual accent + warm cream foreground.
  */
 :root {
-  --color-ink: #0e2233;
-  --color-sea-950: #081420;
-  --color-sea-900: #0d2438;
-  --color-sea-800: #123249;
-  --color-sea-700: #1a4a63;
-  --color-sea-600: #2a5f78;
+  --color-ink: #fff5e8;
+  --color-sea-950: #040e18;
+  --color-sea-900: #071624;
+  --color-sea-800: #0b1e30;
+  --color-sea-700: #0b1e30;
+  --color-sea-600: #10283c;
 
-  --color-brand-600: #0a7f7f;
-  --color-brand-500: #14a8a3;
-  --color-brand-400: #4bc7bf;
+  --color-brand-600: #0cc8be;
+  --color-brand-500: #0cc8be;
+  --color-brand-400: #f5a523;
 
-  --color-sand-50: #f7fafa;
-  --color-sand-100: #eef4f3;
-  --color-sand-200: #dbe7e5;
-  --color-sand-300: #c2d6d4;
+  --color-sand-50: #0b1e30;
+  --color-sand-100: #fff5e8;
+  --color-sand-200: #fff5e8;
+  --color-sand-300: #fff5e8;
 
-  --color-bone: #fbfaf8;
+  --color-bone: #fff5e8;
 
-  --font-display: var(--font-bodoni), Georgia, serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-inter), -apple-system, sans-serif;
   --font-script: var(--font-script-raw), cursive;
 
@@ -59,11 +58,11 @@
   --ease-out-soft: var(--ease-out-soft);
   --duration-reveal: var(--duration-reveal);
 
-  /* Fluid type scale */
-  --text-display: clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem);
-  --text-h2: clamp(1.75rem, 1.4rem + 1.4vw, 2.75rem);
-  --text-h3: clamp(1.375rem, 1.2rem + 0.7vw, 1.875rem);
-  --text-eyebrow: 0.8125rem;
+  /* Fluid type scale — dramatic editorial sizing ported from reference-design */
+  --text-display: clamp(3rem, 2rem + 5vw, 7rem);
+  --text-h2: clamp(2.25rem, 1.6rem + 3vw, 4.5rem);
+  --text-h3: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  --text-eyebrow: 0.6875rem;
 }
 
 html {
@@ -85,9 +84,26 @@ html {
 }
 
 body {
-  background: var(--color-bone);
+  background: var(--color-sea-900);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #c9a96e;
+  color: #0a1628;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e40;
+  border-radius: 2px;
 }
 
 @keyframes kenburns {
@@ -103,7 +119,7 @@ body {
   font-family: var(--font-sans);
   font-size: var(--text-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
 }
 
@@ -111,33 +127,17 @@ body {
   font-family: var(--font-script);
 }
 
-/* Page-wide backdrop: a whisper of warmth top-left and lagoon top-right,
-   so plain sections read as sunlit rather than flat white. */
+/* Page-wide backdrop: deep ocean base (was warm light bone). */
 .bg-page {
-  background-color: var(--color-bone);
-  background-image:
-    radial-gradient(ellipse 70% 50% at 85% -10%, color-mix(in srgb, var(--color-brand-400) 10%, transparent), transparent),
-    radial-gradient(ellipse 60% 40% at -5% 15%, color-mix(in srgb, var(--color-sand-300) 35%, transparent), transparent);
-  background-attachment: fixed;
+  background-color: var(--color-sea-900);
 }
 
-/* Tinted section backdrop (replaces flat bg-sand-50) — same warm base with a
-   soft diagonal drift so bordered bands don't read as a solid color block. */
+/* Alternate section backdrop — navy, for section alternation against ocean. */
 .bg-tint {
-  background-color: var(--color-sand-50);
-  background-image: linear-gradient(
-    155deg,
-    var(--color-sand-100) 0%,
-    var(--color-sand-50) 45%,
-    var(--color-sand-200) 100%
-  );
+  background-color: var(--color-sea-800);
 }
 
-/* Deep navy sections (closing CTA, dark bands) get the same subtle-glow
-   treatment so they don't sit as a flat block of ink. */
+/* Deepest section backdrop (footer, closing CTA). */
 .bg-tint-dark {
   background-color: var(--color-sea-950);
-  background-image:
-    radial-gradient(ellipse 60% 50% at 15% 0%, color-mix(in srgb, var(--color-brand-500) 18%, transparent), transparent),
-    linear-gradient(165deg, var(--color-sea-900) 0%, var(--color-sea-950) 60%);
 }

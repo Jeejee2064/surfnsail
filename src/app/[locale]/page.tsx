@@ -91,7 +91,7 @@ export default async function HomePage({
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal>
               <Eyebrow>{home.intro.eyebrow}</Eyebrow>
-              <h2 className="mt-4 font-display text-[length:var(--text-h2)] leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-4 font-display text-[length:var(--text-h2)] leading-[0.95] tracking-tight text-ink">
                 {home.intro.heading}
               </h2>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink/70">
@@ -178,7 +178,7 @@ export default async function HomePage({
             </Reveal>
             <Reveal className="order-1 lg:order-2">
               <Eyebrow>{home.fleetTeaser.eyebrow}</Eyebrow>
-              <h2 className="mt-4 font-display text-[length:var(--text-h2)] leading-[1.05] tracking-tight text-ink">
+              <h2 className="mt-4 font-display text-[length:var(--text-h2)] leading-[0.95] tracking-tight text-ink">
                 {home.fleetTeaser.heading}
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-ink/70">{home.fleetTeaser.body}</p>
@@ -259,7 +259,7 @@ export default async function HomePage({
         <div className="absolute inset-0 bg-gradient-to-t from-sea-950/95 via-sea-950/75 to-sea-950/50" />
         <Container className="relative">
           <Reveal>
-            <h2 className="font-display text-[length:var(--text-display)] leading-[1.02] tracking-tight">
+            <h2 className="font-display text-[length:var(--text-display)] leading-[0.95] tracking-tight">
               {home.closingCta.heading}
             </h2>
             <LinkButton href="/contact" variant="primary" className="mt-9">

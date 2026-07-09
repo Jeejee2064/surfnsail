@@ -31,7 +31,7 @@ export function PageIntro({ eyebrow, title, subtitle }: PageIntroProps) {
             <span className="h-px w-8 bg-brand-600/70" />
             {eyebrow}
           </p>
-          <h1 className="max-w-2xl font-display text-[length:var(--text-display)] leading-[1.02] tracking-tight text-ink">
+          <h1 className="max-w-2xl font-display text-[length:var(--text-display)] leading-[0.95] tracking-tight text-ink">
             {title}
           </h1>
           {subtitle && (

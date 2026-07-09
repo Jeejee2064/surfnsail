@@ -115,7 +115,7 @@ export default async function FleetPage({
 
               <Reveal delay={100} className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <Eyebrow>{vessel.makeModel}</Eyebrow>
-                <h2 className="mt-4 font-display text-[length:var(--text-h2)] leading-[1.05] tracking-tight text-ink">
+                <h2 className="mt-4 font-display text-[length:var(--text-h2)] leading-[0.95] tracking-tight text-ink">
                   {vessel.name}
                 </h2>
                 <p className="mt-3 text-lg text-ink/70">{vessel.tagline}</p>

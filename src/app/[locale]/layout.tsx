@@ -3,7 +3,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { bodoni, inter, yellowtail } from "@/lib/fonts";
+import { cormorant, inter, yellowtail } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -45,7 +45,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${bodoni.variable} ${inter.variable} ${yellowtail.variable} antialiased`}>
+    <html lang={locale} className={`${cormorant.variable} ${inter.variable} ${yellowtail.variable} antialiased`}>
       <body className="flex min-h-screen flex-col bg-page text-ink">
         <script
           type="application/ld+json"
