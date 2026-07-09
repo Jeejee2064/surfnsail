@@ -1,0 +1,53 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "fleet": "Our Fleet",
+    "packages": "Packages & Prices",
+    "activities": "Activities",
+    "surfing": "Surfing",
+    "sailing": "Sailing",
+    "fishing": "Fishing",
+    "diving": "Diving",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "bookNow": "Book Now",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "Switch language"
+  },
+  "Footer": {
+    "tagline": "Luxury sailing charters in Bocas del Toro, Panama.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "address": "Bocas Marina, Isla Colón, Bocas del Toro, Panama"
+  },
+  "Common": {
+    "bookNow": "Book Now",
+    "requestToBook": "Request to Book",
+    "viewPackages": "View Packages",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "backToTop": "Back to top",
+    "whatsapp": "Chat on WhatsApp",
+    "call": "Call us",
+    "email": "Email us",
+    "exploreFleet": "Explore the Fleet"
+  },
+  "ContactForm": {
+    "name": "Full name",
+    "email": "Email address",
+    "dates": "Preferred dates",
+    "partySize": "Party size",
+    "message": "Tell us about your trip",
+    "submit": "Send Enquiry",
+    "submitting": "Sending…",
+    "success": "Thank you — your enquiry has been sent. We'll reply within 24 hours.",
+    "error": "Something went wrong. Please try again or email us directly.",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address"
+  }
+}

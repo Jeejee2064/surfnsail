@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's#image=\"/images/fleet/fleet-hero.jpg\"#image=\"/droneanchorage.jpeg\"#' \"src/app/[locale]/fleet/page.tsx\")",
+      "Bash(sed -i 's#image=\"/images/packages/packages-hero.jpg\"#image=\"/undersails.jpeg\"#' \"src/app/[locale]/packages/page.tsx\")",
+      "Bash(sed -i 's#image=\"/images/reviews/reviews-hero.jpg\"#image=\"/clientschilling.jpeg\"#' \"src/app/[locale]/reviews/page.tsx\")",
+      "Bash(sed -i 's#image=\"/images/faq/faq-hero.jpg\"#image=\"/bowclients.jpeg\"#' \"src/app/[locale]/faq/page.tsx\")",
+      "Bash(sed -i 's#image=\"/images/contact/contact-hero.jpg\"#image=\"/deck2.jpeg\"#' \"src/app/[locale]/contact/page.tsx\")",
+      "Bash(python3 -c ' *)",
+      "Bash(sed -i 's#image=\"/droneanchorage.jpeg\"#image=\"/undersails.jpeg\"#' \"src/app/[locale]/fleet/page.tsx\")",
+      "Bash(sed -i 's#image=\"/skipper2.jpeg\"#image=\"/coupleclients.jpeg\"#' \"src/app/[locale]/about/page.tsx\")",
+      "Bash(sed -i 's#image=\"/undersails.jpeg\"#image=\"/clientschilling.jpeg\"#' \"src/app/[locale]/packages/page.tsx\")",
+      "Bash(sed -i 's#image=\"/clientschilling.jpeg\"#image=\"/bowclients.jpeg\"#' \"src/app/[locale]/reviews/page.tsx\")",
+      "Bash(sed -i 's#image=\"/bowclients.jpeg\"#image=\"/deck.jpeg\"#' \"src/app/[locale]/faq/page.tsx\")",
+      "Bash(python3 -)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000 --max-time 3)",
+      "Bash(git mv *)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s \"http://localhost:3000/en/fleet\")",
+      "Bash(curl -s \"http://localhost:3000/en/about\")",
+      "Bash(curl -s \"http://localhost:3000/en\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(echo \"exit:$?\")",
+      "Bash(npx tailwindcss *)",
+      "Bash(timeout 100 npx next build)",
+      "Bash(xargs sed -i -E 's/text-\\\\[var\\\\\\(--text-\\([a-z0-9]+\\)\\\\\\)\\\\]/text-[length:var\\(--text-\\\\1\\)]/g')"
+    ]
+  }
+}

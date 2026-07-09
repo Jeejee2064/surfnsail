@@ -1,0 +1,53 @@
+{
+  "Nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "fleet": "Nuestra Flota",
+    "packages": "Paquetes y Precios",
+    "activities": "Actividades",
+    "surfing": "Surf",
+    "sailing": "Navegación",
+    "fishing": "Pesca",
+    "diving": "Buceo",
+    "reviews": "Reseñas",
+    "faq": "Preguntas Frecuentes",
+    "contact": "Contacto",
+    "bookNow": "Reservar Ahora",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "switchLanguage": "Cambiar idioma"
+  },
+  "Footer": {
+    "tagline": "Charters de vela de lujo en Bocas del Toro, Panamá.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "followUs": "Síguenos",
+    "rights": "Todos los derechos reservados.",
+    "address": "Bocas Marina, Isla Colón, Bocas del Toro, Panamá"
+  },
+  "Common": {
+    "bookNow": "Reservar Ahora",
+    "requestToBook": "Solicitar Reserva",
+    "viewPackages": "Ver Paquetes",
+    "learnMore": "Saber Más",
+    "readMore": "Leer Más",
+    "backToTop": "Volver arriba",
+    "whatsapp": "Chatear por WhatsApp",
+    "call": "Llámanos",
+    "email": "Escríbenos",
+    "exploreFleet": "Explorar la Flota"
+  },
+  "ContactForm": {
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "dates": "Fechas preferidas",
+    "partySize": "Número de personas",
+    "message": "Cuéntanos sobre tu viaje",
+    "submit": "Enviar Consulta",
+    "submitting": "Enviando…",
+    "success": "Gracias — tu consulta ha sido enviada. Te responderemos en 24 horas.",
+    "error": "Algo salió mal. Intenta de nuevo o escríbenos directamente.",
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Por favor ingresa un correo electrónico válido"
+  }
+}

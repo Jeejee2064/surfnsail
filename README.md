@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Surfnsail — bilingual (EN/ES) marketing site for a luxury catamaran charter company in Bocas del Toro, Panama. Next.js 16 (App Router), TypeScript, Tailwind CSS v4, next-intl v4.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.example .env.local   # add RESEND_API_KEY
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — this redirects to `/en` (default locale). Spanish is served at `/es`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/proxy.ts` — next-intl locale routing (this Next.js version renames `middleware.ts` to `proxy.ts`), also sets `X-Robots-Tag: noindex` on non-production deploys.
+- `src/i18n/` — routing, request config and typed navigation for next-intl.
+- `src/content/{en,es}/` — long-form page copy (fleet specs, packages, FAQ, activities, crew bios), typed via `src/lib/content-types.ts`.
+- `messages/{en,es}.json` — short UI strings (nav, buttons, form labels).
+- `src/app/[locale]/` — one route per page; `src/app/sitemap.ts` and `src/app/robots.ts` sit outside the locale segment and cover both languages.
+- `src/lib/structured-data.ts` — JSON-LD builders (LocalBusiness, Boat, TouristTrip/Offer, FAQPage, Review/AggregateRating, BreadcrumbList, Organization).
+- `src/components/SmartImage.tsx` — renders a labeled placeholder for any image path not yet delivered by the client, so dropping in real photos later is a one-line change (add the path to `AVAILABLE_IMAGES`).
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Purpose |
+| --- | --- |
+| `RESEND_API_KEY` | Sends the contact/enquiry form via [Resend](https://resend.com) (`src/app/api/contact/route.ts`). The `from` address (`enquiries@surfnsail.pa`) requires the domain to be verified in Resend before it will send. |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Open items before launch (see AGENTS.md brief §9)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Prices** — figures on `/packages` are last-known reference values pulled from the live site; confirm current rates with the client before go-live (`src/content/{en,es}/packages.ts`).
+- **Exta Sea** — specs and photos are placeholders pending Jeremy/Mireille (`src/content/{en,es}/fleet.ts`).
+- **Photos** — only `drone-sail.jpeg` and `chill.jpeg` have arrived; everything else renders as a labeled placeholder via `SmartImage` until real files land in `public/images/...`.
+- **Captain ↔ boat mapping** — currently Marius/Aventura, Jeremy/Exta Sea; confirm with client.
+- **Booking flow** — `site.bookingHref` in `src/lib/site.ts` currently points "Book Now" at `/contact`; swap in an external booking URL if the client wants to keep one.
+- **Social handles** — Instagram/Facebook URLs in `src/lib/site.ts` are best-guess; confirm exact handles.
+- **Brand green** — `--color-brand-600` in `src/app/globals.css` is a placeholder; swap for the exact logo hex once supplied.
