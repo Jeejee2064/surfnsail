@@ -87,7 +87,7 @@ export default async function AboutPage({
                   }`}
                 >
                   <div
-                    className={`relative mx-auto aspect-[3/4] w-full max-w-[220px] overflow-hidden rounded-2xl lg:max-w-none ${
+                    className={`relative mx-auto aspect-[3/4] w-full max-w-[220px] overflow-hidden lg:max-w-none ${
                       i % 2 === 1 ? "lg:order-2" : ""
                     }`}
                   >

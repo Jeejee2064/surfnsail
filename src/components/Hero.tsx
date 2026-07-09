@@ -76,7 +76,7 @@ export function Hero({ image, imageAlt, eyebrow, title, subtitle, children, prio
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-bone [text-wrap:balance] drop-shadow-[0_2px_24px_rgba(0,0,0,0.25)] sm:text-5xl md:text-6xl lg:text-7xl motion-reduce:!transform-none"
+              className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-bone [text-wrap:balance] drop-shadow-[0_2px_24px_rgba(0,0,0,0.25)] sm:text-5xl md:text-6xl lg:text-7xl motion-reduce:!transform-none"
             >
               {title}
             </motion.h1>

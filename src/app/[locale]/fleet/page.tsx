@@ -80,7 +80,7 @@ export default async function FleetPage({
               <a
                 key={vessel.slug}
                 href={`#${vessel.slug}`}
-                className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand-600 hover:text-brand-600"
+                className="inline-flex items-center gap-2 border border-ink/15 px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand-600 hover:text-brand-600"
               >
                 {vessel.name}
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
@@ -101,7 +101,7 @@ export default async function FleetPage({
           <Container>
             <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
               <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <SmartImage
                     src={vessel.heroImage}
                     alt={`${vessel.name}, ${vessel.tagline.toLowerCase()}`}
@@ -121,7 +121,7 @@ export default async function FleetPage({
                 <p className="mt-3 text-lg text-ink/70">{vessel.tagline}</p>
 
                 {vessel.pending && (
-                  <p className="mt-5 rounded-lg bg-white/5 px-4 py-3 text-sm text-ink/70">
+                  <p className="mt-5 border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink/70">
                     {vessel.description[0]}
                   </p>
                 )}

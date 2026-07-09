@@ -16,7 +16,7 @@ export function StickyCta() {
         <WhatsAppButton className="shrink-0 p-3" />
         <Link
           href={site.bookingHref}
-          className="flex-1 rounded-full bg-brand-400 px-5 py-3 text-center text-sm font-semibold text-sea-900 transition-colors hover:bg-gold-light"
+          className="flex-1 bg-brand-400 px-5 py-3 text-center text-[11px] font-bold uppercase tracking-[0.2em] text-sea-900 transition-colors hover:bg-gold-light"
         >
           {t("bookNow")}
         </Link>

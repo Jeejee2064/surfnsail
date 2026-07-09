@@ -98,7 +98,7 @@ export default async function ContactPage({
                   </li>
                 </ul>
 
-                <div className="mt-10 aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="mt-10 aspect-[4/3] overflow-hidden">
                   <iframe
                     title="Bocas Marina location"
                     src={`https://www.google.com/maps?q=${site.geo.latitude},${site.geo.longitude}&z=14&output=embed`}

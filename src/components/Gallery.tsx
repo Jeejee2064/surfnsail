@@ -161,7 +161,7 @@ export function MasonryGallery({ images }: { images: GalleryImage[] }) {
             key={img.src}
             type="button"
             onClick={() => open(i)}
-            className="mb-3 block w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-lg transition-opacity hover:opacity-90"
+            className="mb-3 block w-full cursor-zoom-in break-inside-avoid overflow-hidden transition-opacity hover:opacity-90"
           >
             <SmartImage src={img.src} alt={img.alt} width={img.width} height={img.height} sizes="(min-width: 1024px) 20vw, 45vw" />
           </button>
@@ -186,7 +186,7 @@ export function PhotoGrid({ images, className = "" }: { images: GalleryImage[]; 
             key={img.src}
             type="button"
             onClick={() => open(i)}
-            className="relative aspect-square cursor-zoom-in overflow-hidden rounded-xl transition-opacity hover:opacity-90"
+            className="relative aspect-square cursor-zoom-in overflow-hidden transition-opacity hover:opacity-90"
           >
             <SmartImage src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 20vw, 45vw" className="object-cover" />
           </button>

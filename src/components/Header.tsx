@@ -59,7 +59,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         condensed
-          ? "bg-sea-900/95 shadow-sm shadow-black/20 backdrop-blur"
+          ? "bg-sea-900/95 border-b border-white/8 backdrop-blur"
           : "bg-gradient-to-b from-black/50 to-transparent"
       }`}
     >
@@ -97,7 +97,7 @@ export function Header() {
                 <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             </button>
-            <div className="invisible absolute left-0 top-full w-48 rounded-lg border border-white/10 bg-sea-800 py-2 opacity-0 shadow-xl shadow-black/20 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="invisible absolute left-0 top-full w-48 border border-white/10 bg-sea-800 py-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               {activitySlugs.map((slug) => (
                 <Link
                   key={slug}
@@ -125,7 +125,7 @@ export function Header() {
           <LanguageSwitcher dark />
           <Link
             href={site.bookingHref}
-            className="whitespace-nowrap rounded-full bg-brand-400 px-4 py-2.5 text-sm font-semibold text-sea-900 transition-colors hover:bg-gold-light"
+            className="whitespace-nowrap bg-brand-400 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-sea-900 transition-colors hover:bg-gold-light"
           >
             {t("bookNow")}
           </Link>
@@ -205,7 +205,7 @@ export function Header() {
               <Link
                 href={site.bookingHref}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-full bg-brand-400 px-5 py-2.5 text-sm font-semibold text-sea-900"
+                className="bg-brand-400 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-sea-900"
               >
                 {t("bookNow")}
               </Link>

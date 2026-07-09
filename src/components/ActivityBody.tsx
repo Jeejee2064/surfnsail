@@ -44,7 +44,7 @@ export async function ActivityBody({ locale, slug }: { locale: Locale; slug: Act
             {activity.sections.map((section, i) => (
               <Fragment key={section.heading}>
                 <Reveal delay={i * 80}>
-                  <h2 className="font-display text-[length:var(--text-h3)] text-ink">{section.heading}</h2>
+                  <h2 className="font-display text-[length:var(--text-h3)] font-semibold text-ink">{section.heading}</h2>
                   <div className="mt-3 space-y-3 text-base leading-relaxed text-ink/70">
                     {section.body.map((p) => (
                       <p key={p}>{p}</p>
@@ -52,7 +52,7 @@ export async function ActivityBody({ locale, slug }: { locale: Locale; slug: Act
                   </div>
                 </Reveal>
                 {activity.midImage && i === midIndex - 1 && (
-                  <Reveal className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+                  <Reveal className="relative aspect-[16/9] overflow-hidden">
                     <SmartImage
                       src={activity.midImage.src}
                       alt={activity.midImage.alt}

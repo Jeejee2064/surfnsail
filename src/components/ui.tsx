@@ -35,7 +35,7 @@ export function SectionHeading({
         <p className={`eyebrow mb-4 ${dark ? "text-sand-200" : "text-brand-600"}`}>{eyebrow}</p>
       )}
       <h2
-        className={`font-display text-[length:var(--text-h2)] leading-[0.95] tracking-tight ${
+        className={`font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight ${
           dark ? "text-bone" : "text-ink"
         }`}
       >

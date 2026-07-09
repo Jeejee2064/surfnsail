@@ -101,7 +101,7 @@ export default async function HomePage({
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <SmartImage
                   src="/chill.jpeg"
                   alt="A guest relaxing on the trampoline netting of a Surfnsail catamaran over turquoise water"
@@ -166,7 +166,7 @@ export default async function HomePage({
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal className="order-2 lg:order-1">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <SmartImage
                   src="/catamaran.jpeg"
                   alt="Aventura and Exta Sea catamarans"
@@ -198,7 +198,7 @@ export default async function HomePage({
               <Reveal key={slug} delay={i * 90} className={i % 2 === 1 ? "lg:mt-12" : ""}>
                 <Link
                   href={`/activities/${slug}`}
-                  className="group relative block aspect-[3/4] overflow-hidden rounded-2xl"
+                  className="group relative block aspect-[3/4] overflow-hidden"
                 >
                   <SmartImage
                     src={PASSION_IMAGES[slug]}

@@ -42,7 +42,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <p role="status" className="rounded-xl bg-brand-600/10 px-6 py-5 text-brand-600">
+      <p role="status" className="border border-brand-600/30 bg-brand-600/10 px-6 py-5 text-brand-600">
         {t("success")}
       </p>
     );
@@ -67,7 +67,7 @@ export function ContactForm() {
             name="name"
             type="text"
             required
-            className="w-full rounded-lg border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
+            className="w-full border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
           />
         </label>
         <label className="block text-sm">
@@ -76,7 +76,7 @@ export function ContactForm() {
             name="email"
             type="email"
             required
-            className="w-full rounded-lg border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
+            className="w-full border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
           />
         </label>
         <label className="block text-sm">
@@ -84,7 +84,7 @@ export function ContactForm() {
           <input
             name="dates"
             type="text"
-            className="w-full rounded-lg border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
+            className="w-full border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
           />
         </label>
         <label className="block text-sm">
@@ -92,7 +92,7 @@ export function ContactForm() {
           <input
             name="partySize"
             type="text"
-            className="w-full rounded-lg border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
+            className="w-full border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
           />
         </label>
       </div>
@@ -103,7 +103,7 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="w-full rounded-lg border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
+          className="w-full border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
         />
       </label>
 
@@ -116,7 +116,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-full bg-brand-400 px-8 py-3.5 text-sm font-semibold text-sea-900 transition-colors hover:bg-gold-light disabled:opacity-60"
+        className="bg-brand-400 px-10 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-sea-900 transition-colors duration-300 hover:bg-gold-light disabled:opacity-60"
       >
         {status === "submitting" ? t("submitting") : t("submit")}
       </button>
