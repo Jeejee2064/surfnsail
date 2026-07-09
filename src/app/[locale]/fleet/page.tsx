@@ -73,7 +73,7 @@ export default async function FleetPage({
 
       <PageIntro eyebrow={fleetIntro.eyebrow} title={fleetIntro.heading} subtitle={fleetIntro.body} />
 
-      <div className="border-b border-ink/10 bg-bone py-6">
+      <div className="border-b border-ink/10 bg-tint-dark py-6">
         <Container>
           <Reveal className="flex flex-wrap items-center justify-center gap-3">
             {fleet.map((vessel) => (
@@ -121,7 +121,7 @@ export default async function FleetPage({
                 <p className="mt-3 text-lg text-ink/70">{vessel.tagline}</p>
 
                 {vessel.pending && (
-                  <p className="mt-5 rounded-lg bg-sand-200/70 px-4 py-3 text-sm text-ink/70">
+                  <p className="mt-5 rounded-lg bg-white/5 px-4 py-3 text-sm text-ink/70">
                     {vessel.description[0]}
                   </p>
                 )}

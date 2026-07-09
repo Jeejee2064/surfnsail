@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { SmartImage } from "./SmartImage";
 import type { ReactNode } from "react";
 
@@ -45,6 +46,15 @@ export function Hero({ image, imageAlt, eyebrow, title, subtitle, children, prio
         <div className="absolute inset-0 bg-gradient-to-r from-sea-950/40 via-transparent to-transparent" />
       </motion.div>
 
+      <Image
+        src="/logo-icon.png"
+        alt=""
+        aria-hidden="true"
+        width={874}
+        height={777}
+        className="pointer-events-none absolute -bottom-16 -right-16 h-[24rem] w-auto rotate-6 opacity-[0.06] sm:h-[32rem] brightness-0 invert"
+      />
+
       <motion.div
         style={{ y: contentY, opacity }}
         className="relative mt-auto flex flex-col items-start px-6 py-14 sm:px-10 sm:py-20 lg:px-16 lg:py-28 motion-reduce:!transform-none motion-reduce:!opacity-100"
@@ -61,29 +71,33 @@ export function Hero({ image, imageAlt, eyebrow, title, subtitle, children, prio
               {eyebrow}
             </motion.p>
           )}
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-bone [text-wrap:balance] drop-shadow-[0_2px_24px_rgba(0,0,0,0.25)] sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            {title}
-          </motion.h1>
-          {subtitle && (
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-3 max-w-2xl font-script text-4xl leading-tight text-brand-400 [text-shadow:0_2px_18px_rgba(0,0,0,0.35)] sm:mt-4 sm:text-5xl md:text-6xl lg:text-7xl"
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-bone [text-wrap:balance] drop-shadow-[0_2px_24px_rgba(0,0,0,0.25)] sm:text-5xl md:text-6xl lg:text-7xl motion-reduce:!transform-none"
             >
-              {subtitle}
-            </motion.p>
+              {title}
+            </motion.h1>
+          </div>
+          {subtitle && (
+            <div className="overflow-hidden">
+              <motion.p
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-3 max-w-2xl font-script text-4xl leading-tight text-brand-400 [text-shadow:0_2px_18px_rgba(0,0,0,0.35)] sm:mt-4 sm:text-5xl md:text-6xl lg:text-7xl motion-reduce:!transform-none"
+              >
+                {subtitle}
+              </motion.p>
+            </div>
           )}
           {children && (
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.9, delay: 1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
               {children}

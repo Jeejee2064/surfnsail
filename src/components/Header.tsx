@@ -55,27 +55,24 @@ export function Header() {
     { href: "/contact", label: t("contact") },
   ];
 
-  const isDark = !condensed;
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         condensed
-          ? "bg-bone/95 shadow-sm shadow-black/5 backdrop-blur"
+          ? "bg-sea-900/95 shadow-sm shadow-black/20 backdrop-blur"
           : "bg-gradient-to-b from-black/50 to-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link href="/" className="flex items-center gap-2.5">
-          <Logo dark={isDark} />
-          {/* surfnsail.png is white text on transparent; brightness-0 flips it to ink for the light header */}
+          <Logo dark />
           <Image
             src="/surfnsail.png"
             alt={site.name}
             width={794}
             height={189}
             priority
-            className={`h-5 w-auto object-contain ${isDark ? "" : "brightness-0"}`}
+            className="h-5 w-auto object-contain"
           />
         </Link>
 
@@ -84,7 +81,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`whitespace-nowrap transition-opacity hover:opacity-70 ${isDark ? "text-bone" : "text-ink"}`}
+              className="whitespace-nowrap text-ink transition-opacity hover:opacity-70"
             >
               {link.label}
             </Link>
@@ -93,21 +90,19 @@ export function Header() {
           <div className="group relative">
             <button
               type="button"
-              className={`flex items-center gap-1 whitespace-nowrap transition-opacity hover:opacity-70 ${
-                isDark ? "text-bone" : "text-ink"
-              }`}
+              className="flex items-center gap-1 whitespace-nowrap text-ink transition-opacity hover:opacity-70"
             >
               {t("activities")}
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                 <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             </button>
-            <div className="invisible absolute left-0 top-full w-48 rounded-lg border border-black/5 bg-bone py-2 opacity-0 shadow-xl shadow-black/10 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="invisible absolute left-0 top-full w-48 rounded-lg border border-white/10 bg-sea-800 py-2 opacity-0 shadow-xl shadow-black/20 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               {activitySlugs.map((slug) => (
                 <Link
                   key={slug}
                   href={`/activities/${slug}`}
-                  className="block px-4 py-2 text-sm text-ink transition-colors hover:bg-sand-100"
+                  className="block px-4 py-2 text-sm text-ink transition-colors hover:bg-white/5"
                 >
                   {t(slug)}
                 </Link>
@@ -119,7 +114,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`whitespace-nowrap transition-opacity hover:opacity-70 ${isDark ? "text-bone" : "text-ink"}`}
+              className="whitespace-nowrap text-ink transition-opacity hover:opacity-70"
             >
               {link.label}
             </Link>
@@ -127,10 +122,10 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <LanguageSwitcher dark={isDark} />
+          <LanguageSwitcher dark />
           <Link
             href={site.bookingHref}
-            className="whitespace-nowrap rounded-full bg-brand-600 px-4 py-2.5 text-sm font-semibold text-bone transition-colors hover:bg-brand-500"
+            className="whitespace-nowrap rounded-full bg-brand-400 px-4 py-2.5 text-sm font-semibold text-sea-900 transition-colors hover:bg-gold-light"
           >
             {t("bookNow")}
           </Link>
@@ -141,7 +136,7 @@ export function Header() {
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
           aria-expanded={mobileOpen}
-          className={`relative z-10 flex h-9 w-9 items-center justify-center lg:hidden ${isDark ? "text-bone" : "text-ink"}`}
+          className="relative z-10 flex h-9 w-9 items-center justify-center text-ink lg:hidden"
         >
           <span className="relative block h-4 w-6">
             <motion.span
@@ -170,7 +165,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-1 border-t border-ink/10 bg-bone px-6 py-5 lg:hidden"
+            className="flex flex-col gap-1 border-t border-ink/10 bg-sea-900 px-6 py-5 lg:hidden"
           >
             {[...links, ...trailingLinks].map((link, i) => (
               <motion.div
@@ -182,7 +177,7 @@ export function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-md px-2 py-2.5 text-base text-ink hover:bg-sand-100"
+                  className="block rounded-md px-2 py-2.5 text-base text-ink hover:bg-white/5"
                 >
                   {link.label}
                 </Link>
@@ -199,7 +194,7 @@ export function Header() {
                 <Link
                   href={`/activities/${slug}`}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-md px-2 py-2 text-base text-ink hover:bg-sand-100"
+                  className="block rounded-md px-2 py-2 text-base text-ink hover:bg-white/5"
                 >
                   {t(slug)}
                 </Link>
@@ -210,7 +205,7 @@ export function Header() {
               <Link
                 href={site.bookingHref}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-bone"
+                className="rounded-full bg-brand-400 px-5 py-2.5 text-sm font-semibold text-sea-900"
               >
                 {t("bookNow")}
               </Link>

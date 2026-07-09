@@ -23,7 +23,7 @@ export function PageIntro({ eyebrow, title, subtitle }: PageIntroProps) {
         aria-hidden="true"
         width={874}
         height={777}
-        className="pointer-events-none absolute -right-24 -top-16 h-[26rem] w-auto rotate-6 opacity-[0.05] sm:h-[34rem]"
+        className="pointer-events-none absolute -right-24 -top-16 h-[26rem] w-auto rotate-6 opacity-[0.05] sm:h-[34rem] brightness-0 invert"
       />
       <Container className="relative">
         <Reveal>

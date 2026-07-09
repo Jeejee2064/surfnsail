@@ -83,7 +83,7 @@ export default async function ReviewsPage({
           <div className="grid gap-8 sm:grid-cols-2">
             {reviews.map((review, i) => (
               <Reveal key={`${review.name}-${review.date}`} delay={i * 60}>
-                <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-bone p-8">
+                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-tint p-8">
                   <Stars rating={review.rating} />
                   <p className="mt-4 flex-1 font-display text-lg italic leading-relaxed text-ink/75">&ldquo;{review.text}&rdquo;</p>
                   <div className="mt-6 border-t border-ink/10 pt-4">

@@ -16,6 +16,7 @@
   --color-brand-600: #0cc8be;
   --color-brand-500: #0cc8be;
   --color-brand-400: #f5a523;
+  --color-gold-light: #ffbf3d;
 
   --color-sand-50: #0b1e30;
   --color-sand-100: #fff5e8;
@@ -43,6 +44,7 @@
   --color-brand-600: var(--color-brand-600);
   --color-brand-500: var(--color-brand-500);
   --color-brand-400: var(--color-brand-400);
+  --color-gold-light: var(--color-gold-light);
 
   --color-sand-50: var(--color-sand-50);
   --color-sand-100: var(--color-sand-100);
@@ -127,17 +129,35 @@ body {
   font-family: var(--font-script);
 }
 
-/* Page-wide backdrop: deep ocean base (was warm light bone). */
+/* Page-wide backdrop: deep ocean base with a whisper of teal glow top-right
+   so large flat sections don't read as a dead block of navy. */
 .bg-page {
   background-color: var(--color-sea-900);
+  background-image: radial-gradient(
+    ellipse 70% 50% at 85% -10%,
+    color-mix(in srgb, var(--color-brand-500) 10%, transparent),
+    transparent
+  );
 }
 
-/* Alternate section backdrop — navy, for section alternation against ocean. */
+/* Alternate section backdrop — navy, with a soft gold glow for variation
+   against the plain ocean sections. */
 .bg-tint {
   background-color: var(--color-sea-800);
+  background-image: radial-gradient(
+    ellipse 60% 45% at 10% 0%,
+    color-mix(in srgb, var(--color-brand-400) 8%, transparent),
+    transparent
+  );
 }
 
-/* Deepest section backdrop (footer, closing CTA). */
+/* Deepest section backdrop (footer, closing CTA) — same subtle-glow
+   treatment so it doesn't sit as a flat block of ink. */
 .bg-tint-dark {
   background-color: var(--color-sea-950);
+  background-image: radial-gradient(
+    ellipse 60% 50% at 15% 0%,
+    color-mix(in srgb, var(--color-brand-500) 14%, transparent),
+    transparent
+  );
 }

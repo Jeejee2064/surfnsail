@@ -4,8 +4,8 @@ import { Link } from "@/i18n/navigation";
 type Variant = "primary" | "secondary" | "ghost";
 
 const styles: Record<Variant, string> = {
-  primary: "bg-brand-600 text-bone hover:bg-brand-500",
-  secondary: "bg-bone/10 text-bone border border-bone/40 backdrop-blur hover:bg-bone/20",
+  primary: "bg-brand-400 text-sea-900 hover:bg-gold-light",
+  secondary: "bg-transparent text-brand-600 border-2 border-brand-600 hover:bg-brand-600 hover:text-sea-900",
   ghost: "bg-transparent text-ink border border-ink/15 hover:border-ink/40",
 };
 

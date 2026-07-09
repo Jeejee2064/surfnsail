@@ -79,7 +79,7 @@ export default async function PackagesPage({
 
       <section className="py-24 sm:py-32">
         <Container>
-          <Reveal className="mb-12 rounded-xl bg-sand-100 px-6 py-4 text-sm text-ink/70">
+          <Reveal className="mb-12 rounded-xl bg-tint px-6 py-4 text-sm text-ink/70">
             {priceNotice}
           </Reveal>
 
@@ -89,13 +89,13 @@ export default async function PackagesPage({
               const peak = formatPrice(pkg.pricePeak);
               return (
                 <Reveal key={pkg.slug} delay={i * 60}>
-                  <div id={pkg.slug} className="scroll-mt-24 flex h-full flex-col rounded-2xl border border-ink/10 bg-bone p-8">
+                  <div id={pkg.slug} className="scroll-mt-24 flex h-full flex-col rounded-2xl border border-white/10 bg-tint p-8">
                     <h2 className="font-display text-2xl text-ink">{pkg.name}</h2>
                     <p className="mt-1 text-sm text-ink/50">{pkg.duration}</p>
 
                     <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-1">
                       {standard && (
-                        <p className="font-display text-3xl text-brand-600">
+                        <p className="font-display text-3xl text-brand-400">
                           {standard}
                           <span className="ml-1 text-sm font-sans text-ink/50">/ {pkg.unit}</span>
                         </p>
