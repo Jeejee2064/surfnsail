@@ -68,6 +68,10 @@ export const activities: Activity[] = [
     subtitle: "Trolling, casting and bottom fishing offshore",
     heroImage: "/fishing.jpg",
     midImage: { src: "/fishing-sunset.jpeg", alt: "Fishing off the back of the boat at sunset in Bocas del Toro" },
+    gallery: [
+      { src: "/fishing.jpeg", alt: "Guest holding a jack caught trolling off Bocas del Toro", width: 1536, height: 2048 },
+      { src: "/fishing2.jpeg", alt: "Guests holding a mahi-mahi caught aboard a Surfnsail charter", width: 3024, height: 4032 },
+    ],
     intro:
       "Trolling off the back, casting off the dinghy, or bottom fishing offshore — however you like to fish, Bocas del Toro's waters give you the chance to do it.",
     sections: [

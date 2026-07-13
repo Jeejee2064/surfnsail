@@ -68,6 +68,10 @@ export const activities: Activity[] = [
     subtitle: "Curricán, lanzado desde el bote auxiliar y pesca de fondo",
     heroImage: "/fishing.jpg",
     midImage: { src: "/fishing-sunset.jpeg", alt: "Pesca desde la popa del bote al atardecer en Bocas del Toro" },
+    gallery: [
+      { src: "/fishing.jpeg", alt: "Huésped sosteniendo un jurel pescado con curricán en Bocas del Toro", width: 1536, height: 2048 },
+      { src: "/fishing2.jpeg", alt: "Huéspedes sosteniendo un dorado pescado en un charter de Surfnsail", width: 3024, height: 4032 },
+    ],
     intro:
       "Curricán desde la popa, lanzado desde el bote auxiliar o pesca de fondo mar afuera — como prefieras pescar, las aguas de Bocas del Toro te dan la oportunidad de hacerlo.",
     sections: [

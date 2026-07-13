@@ -60,6 +60,7 @@ export interface Activity {
   intro: string;
   sections: ActivitySection[];
   midImage?: { src: string; alt: string };
+  gallery?: GalleryImage[];
 }
 
 export interface FaqItem {

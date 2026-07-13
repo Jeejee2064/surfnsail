@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { Container } from "@/components/ui";
 import { LinkButton } from "@/components/Button";
 import { SmartImage } from "@/components/SmartImage";
+import { PhotoGrid } from "@/components/Gallery";
 import { getActivitiesContent } from "@/lib/content";
 import type { Activity } from "@/lib/content-types";
 
@@ -65,6 +66,12 @@ export async function ActivityBody({ locale, slug }: { locale: Locale; slug: Act
               </Fragment>
             ))}
           </div>
+
+          {activity.gallery && activity.gallery.length > 0 && (
+            <Reveal delay={120}>
+              <PhotoGrid className="mx-auto mt-16 max-w-3xl" images={activity.gallery} />
+            </Reveal>
+          )}
 
           <div className="mt-16 text-center">
             <LinkButton href="/contact" variant="primary">
