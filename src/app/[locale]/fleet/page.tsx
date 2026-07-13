@@ -4,7 +4,7 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
-import { PageIntro } from "@/components/PageIntro";
+import { ParallaxBand } from "@/components/ParallaxBand";
 import { Reveal } from "@/components/Reveal";
 import { Container, Eyebrow } from "@/components/ui";
 import { LinkButton } from "@/components/Button";
@@ -71,7 +71,14 @@ export default async function FleetPage({
         />
       ))}
 
-      <PageIntro eyebrow={fleetIntro.eyebrow} title={fleetIntro.heading} subtitle={fleetIntro.body} />
+      <ParallaxBand
+        image="/catamaran.jpeg"
+        imageAlt="Surfnsail catamaran fleet underway in Bocas del Toro"
+        eyebrow={fleetIntro.eyebrow}
+        heading={fleetIntro.heading}
+        body={fleetIntro.body}
+        height="tall"
+      />
 
       <div className="border-b border-ink/10 bg-tint-dark py-6">
         <Container>

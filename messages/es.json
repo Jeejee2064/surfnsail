@@ -10,12 +10,14 @@
     "fishing": "Pesca",
     "diving": "Buceo",
     "reviews": "Reseñas",
-    "faq": "Preguntas Frecuentes",
+    "faq": "FAQ",
     "contact": "Contacto",
     "bookNow": "Reservar Ahora",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
-    "switchLanguage": "Cambiar idioma"
+    "switchLanguage": "Cambiar idioma",
+    "switchToLight": "Cambiar a modo claro",
+    "switchToDark": "Cambiar a modo oscuro"
   },
   "Footer": {
     "tagline": "Charters de vela de lujo en Bocas del Toro, Panamá.",

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { cormorant, inter, yellowtail } from "@/lib/fonts";
+import { bodoni, cormorant, inter, yellowtail } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -44,8 +45,16 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
+  // Theme is read from a cookie server-side so the correct palette renders
+  // on the very first paint — no client script, no flash, no hydration diff.
+  const theme = (await cookies()).get("theme")?.value === "light" ? "light" : undefined;
+
   return (
-    <html lang={locale} className={`${cormorant.variable} ${inter.variable} ${yellowtail.variable} antialiased`}>
+    <html
+      lang={locale}
+      data-theme={theme}
+      className={`${bodoni.variable} ${cormorant.variable} ${inter.variable} ${yellowtail.variable} antialiased`}
+    >
       <body className="flex min-h-screen flex-col bg-page text-ink">
         <script
           type="application/ld+json"

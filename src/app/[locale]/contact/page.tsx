@@ -71,9 +71,9 @@ export default async function ContactPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd(locale)) }}
       />
 
-      <PageIntro eyebrow={copy.eyebrow} title={copy.heading} />
+      <PageIntro eyebrow={copy.eyebrow} title={copy.heading} compact />
 
-      <section className="py-24 sm:py-32">
+      <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr]">
             <Reveal>
@@ -97,16 +97,6 @@ export default async function ContactPage({
                     </a>
                   </li>
                 </ul>
-
-                <div className="mt-10 aspect-[4/3] overflow-hidden">
-                  <iframe
-                    title="Bocas Marina location"
-                    src={`https://www.google.com/maps?q=${site.geo.latitude},${site.geo.longitude}&z=14&output=embed`}
-                    className="h-full w-full border-0"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
               </div>
             </Reveal>
 

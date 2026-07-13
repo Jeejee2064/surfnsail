@@ -65,9 +65,9 @@ export default async function FaqPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faq)) }}
       />
 
-      <PageIntro eyebrow={faqIntro.eyebrow} title={faqIntro.heading} subtitle={faqIntro.body} />
+      <PageIntro eyebrow={faqIntro.eyebrow} title={faqIntro.heading} subtitle={faqIntro.body} compact />
 
-      <section className="py-24 sm:py-32">
+      <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
         <Container>
           <Reveal className="mx-auto max-w-3xl">
             <FaqAccordion items={faq} />

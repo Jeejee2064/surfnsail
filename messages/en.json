@@ -15,7 +15,9 @@
     "bookNow": "Book Now",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "switchLanguage": "Switch language"
+    "switchLanguage": "Switch language",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
   },
   "Footer": {
     "tagline": "Luxury sailing charters in Bocas del Toro, Panama.",

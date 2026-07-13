@@ -33,6 +33,60 @@
   --duration-reveal: 700ms;
 }
 
+/* Light theme — the original bone/navy/teal palette + Bodoni Moda, kept
+   as a togglable alternative to the dark ocean redesign above. */
+:root[data-theme="light"] {
+  --color-ink: #0e2233;
+  --color-sea-950: #081420;
+  --color-sea-900: #0d2438;
+  --color-sea-800: #123249;
+  --color-sea-700: #1a4a63;
+  --color-sea-600: #2a5f78;
+
+  --color-brand-600: #0a7f7f;
+  --color-brand-500: #14a8a3;
+  --color-brand-400: #4bc7bf;
+  --color-gold-light: #14a8a3;
+
+  --color-sand-50: #f7fafa;
+  --color-sand-100: #eef4f3;
+  --color-sand-200: #dbe7e5;
+  --color-sand-300: #c2d6d4;
+
+  --color-bone: #fbfaf8;
+
+  --font-display: var(--font-bodoni), Georgia, serif;
+}
+
+:root[data-theme="light"] body {
+  background: var(--color-bone);
+}
+
+:root[data-theme="light"] .bg-page {
+  background-color: var(--color-bone);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 85% -10%, color-mix(in srgb, var(--color-brand-400) 10%, transparent), transparent),
+    radial-gradient(ellipse 60% 40% at -5% 15%, color-mix(in srgb, var(--color-sand-300) 35%, transparent), transparent);
+  background-attachment: fixed;
+}
+
+:root[data-theme="light"] .bg-tint {
+  background-color: var(--color-sand-50);
+  background-image: linear-gradient(
+    155deg,
+    var(--color-sand-100) 0%,
+    var(--color-sand-50) 45%,
+    var(--color-sand-200) 100%
+  );
+}
+
+:root[data-theme="light"] .bg-tint-dark {
+  background-color: var(--color-sea-950);
+  background-image:
+    radial-gradient(ellipse 60% 50% at 15% 0%, color-mix(in srgb, var(--color-brand-500) 18%, transparent), transparent),
+    linear-gradient(165deg, var(--color-sea-900) 0%, var(--color-sea-950) 60%);
+}
+
 @theme inline {
   --color-ink: var(--color-ink);
   --color-sea-950: var(--color-sea-950);

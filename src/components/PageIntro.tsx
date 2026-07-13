@@ -6,6 +6,7 @@ interface PageIntroProps {
   eyebrow: string;
   title: string;
   subtitle?: string;
+  compact?: boolean;
 }
 
 // Photo-less page header used everywhere except the home page and the
@@ -14,7 +15,30 @@ interface PageIntroProps {
 // the site reads as a quieter, typographic editorial page). The oversized
 // watermark sail mark stands in for a hero image instead of stretching a
 // generic lifestyle photo across the top of every page.
-export function PageIntro({ eyebrow, title, subtitle }: PageIntroProps) {
+//
+// `compact` drops the banner treatment (watermark, tinted band, huge
+// display type) for pages where the content should start reading right
+// away — just enough space to clear the fixed header, then a modest H1.
+export function PageIntro({ eyebrow, title, subtitle, compact = false }: PageIntroProps) {
+  if (compact) {
+    return (
+      <Container className="pb-6 pt-24 sm:pt-28">
+        <Reveal>
+          <p className="eyebrow mb-2 flex items-center gap-3 text-brand-600">
+            <span className="h-px w-8 bg-brand-600/70" />
+            {eyebrow}
+          </p>
+          <h1 className="max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            {title}
+          </h1>
+          {subtitle && (
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-ink/70">{subtitle}</p>
+          )}
+        </Reveal>
+      </Container>
+    );
+  }
+
   return (
     <div className="relative overflow-hidden border-b border-ink/10 bg-tint pb-16 pt-36 sm:pb-20 sm:pt-44">
       <Image

@@ -75,9 +75,9 @@ export default async function PackagesPage({
         />
       ))}
 
-      <PageIntro eyebrow={packagesIntro.eyebrow} title={packagesIntro.heading} subtitle={packagesIntro.body} />
+      <PageIntro eyebrow={packagesIntro.eyebrow} title={packagesIntro.heading} subtitle={packagesIntro.body} compact />
 
-      <section className="py-24 sm:py-32">
+      <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
         <Container>
           <Reveal className="mb-12 border border-white/10 bg-tint px-6 py-4 text-sm text-ink/70">
             {priceNotice}

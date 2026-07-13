@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { Logo } from "./Logo";
 import { site } from "@/lib/site";
 
@@ -49,9 +50,10 @@ export function Header() {
     { href: "/packages", label: t("packages") },
   ];
 
-  const trailingLinks: { href: "/reviews" | "/faq" | "/contact"; label: string }[] = [
+  // FAQ lives in the footer only — keeping it out of the header nav gives
+  // the bar breathing room on narrower desktop widths.
+  const trailingLinks: { href: "/reviews" | "/contact"; label: string }[] = [
     { href: "/reviews", label: t("reviews") },
-    { href: "/faq", label: t("faq") },
     { href: "/contact", label: t("contact") },
   ];
 
@@ -64,24 +66,24 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Logo dark />
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
+          <Logo dark className="shrink-0" />
           <Image
             src="/surfnsail.png"
             alt={site.name}
             width={794}
             height={189}
             priority
-            className="h-5 w-auto object-contain"
+            className="h-5 w-[84px] shrink-0 object-contain"
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 text-sm font-medium xl:gap-6 lg:flex">
+        <nav className="hidden items-center gap-4 text-sm font-medium 2xl:gap-6 xl:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="whitespace-nowrap text-ink transition-opacity hover:opacity-70"
+              className="whitespace-nowrap text-bone transition-opacity hover:opacity-70"
             >
               {link.label}
             </Link>
@@ -90,7 +92,7 @@ export function Header() {
           <div className="group relative">
             <button
               type="button"
-              className="flex items-center gap-1 whitespace-nowrap text-ink transition-opacity hover:opacity-70"
+              className="flex items-center gap-1 whitespace-nowrap text-bone transition-opacity hover:opacity-70"
             >
               {t("activities")}
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
@@ -102,7 +104,7 @@ export function Header() {
                 <Link
                   key={slug}
                   href={`/activities/${slug}`}
-                  className="block px-4 py-2 text-sm text-ink transition-colors hover:bg-white/5"
+                  className="block px-4 py-2 text-sm text-bone transition-colors hover:bg-white/5"
                 >
                   {t(slug)}
                 </Link>
@@ -114,14 +116,15 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="whitespace-nowrap text-ink transition-opacity hover:opacity-70"
+              className="whitespace-nowrap text-bone transition-opacity hover:opacity-70"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
+          <ThemeToggle dark />
           <LanguageSwitcher dark />
           <Link
             href={site.bookingHref}
@@ -136,7 +139,7 @@ export function Header() {
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
           aria-expanded={mobileOpen}
-          className="relative z-10 flex h-9 w-9 items-center justify-center text-ink lg:hidden"
+          className="relative z-10 flex h-9 w-9 items-center justify-center text-bone xl:hidden"
         >
           <span className="relative block h-4 w-6">
             <motion.span
@@ -165,7 +168,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-1 border-t border-ink/10 bg-sea-900 px-6 py-5 lg:hidden"
+            className="flex flex-col gap-1 border-t border-bone/10 bg-sea-900 px-6 py-5 xl:hidden"
           >
             {[...links, ...trailingLinks].map((link, i) => (
               <motion.div
@@ -177,7 +180,7 @@ export function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-md px-2 py-2.5 text-base text-ink hover:bg-white/5"
+                  className="block rounded-md px-2 py-2.5 text-base text-bone hover:bg-white/5"
                 >
                   {link.label}
                 </Link>
@@ -194,14 +197,17 @@ export function Header() {
                 <Link
                   href={`/activities/${slug}`}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-md px-2 py-2 text-base text-ink hover:bg-white/5"
+                  className="block rounded-md px-2 py-2 text-base text-bone hover:bg-white/5"
                 >
                   {t(slug)}
                 </Link>
               </motion.div>
             ))}
-            <div className="mt-3 flex items-center justify-between border-t border-ink/10 px-2 pt-4">
-              <LanguageSwitcher />
+            <div className="mt-3 flex items-center justify-between border-t border-bone/10 px-2 pt-4">
+              <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <LanguageSwitcher />
+              </div>
               <Link
                 href={site.bookingHref}
                 onClick={() => setMobileOpen(false)}

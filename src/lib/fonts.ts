@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Inter, Yellowtail } from "next/font/google";
+import { Bodoni_Moda, Cormorant_Garamond, Inter, Yellowtail } from "next/font/google";
 
 // Self-hosted via next/font — no runtime request to Google, no layout shift.
 // Italic axis enabled for editorial accents (hero eyebrows, pull quotes).
@@ -7,6 +7,14 @@ export const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
+  display: "swap",
+});
+
+// Display font for the light theme (pre-redesign palette).
+export const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-bodoni",
   display: "swap",
 });
 

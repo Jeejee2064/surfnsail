@@ -61,9 +61,9 @@ export default async function AboutPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
-      <PageIntro eyebrow={aboutIntro.eyebrow} title={aboutIntro.heading} />
+      <PageIntro eyebrow={aboutIntro.eyebrow} title={aboutIntro.heading} compact />
 
-      <section className="py-24 sm:py-32">
+      <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
         <Container>
           <Reveal className="mx-auto max-w-2xl text-center">
             <div className="space-y-4 text-lg leading-relaxed text-ink/70">

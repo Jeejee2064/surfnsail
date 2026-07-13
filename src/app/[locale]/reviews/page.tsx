@@ -76,9 +76,9 @@ export default async function ReviewsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsJsonLd(reviews)) }}
       />
 
-      <PageIntro eyebrow={reviewsIntro.eyebrow} title={reviewsIntro.heading} subtitle={reviewsIntro.body} />
+      <PageIntro eyebrow={reviewsIntro.eyebrow} title={reviewsIntro.heading} subtitle={reviewsIntro.body} compact />
 
-      <section className="py-24 sm:py-32">
+      <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
         <Container>
           <div className="grid gap-8 sm:grid-cols-2">
             {reviews.map((review, i) => (
