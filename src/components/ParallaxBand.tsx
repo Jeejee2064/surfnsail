@@ -41,7 +41,7 @@ export function ParallaxBand({
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-125 motion-reduce:!transform-none">
         <SmartImage src={image} alt={imageAlt} fill sizes="100vw" className="object-cover" />
       </motion.div>
-      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-black/25" />
 
       <motion.div
         style={{ y: contentY }}
@@ -50,7 +50,7 @@ export function ParallaxBand({
         }`}
       >
         <div className={align === "center" ? "max-w-2xl" : "max-w-xl"}>
-          {eyebrow && <p className="eyebrow mb-4 text-sand-100">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow mb-4 text-black-100">{eyebrow}</p>}
           <h2 className="font-display text-[length:var(--text-display)] font-semibold leading-[0.95] tracking-tight text-bone">
             {heading}
           </h2>

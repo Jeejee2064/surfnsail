@@ -8,6 +8,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 import { Logo } from "./Logo";
+import { BookNowButton } from "./BookNowButton";
 import { site } from "@/lib/site";
 
 const activitySlugs = ["surfing", "sailing", "fishing", "diving"] as const;
@@ -126,12 +127,12 @@ export function Header() {
         <div className="hidden items-center gap-4 xl:flex">
           <ThemeToggle dark />
           <LanguageSwitcher dark />
-          <Link
-            href={site.bookingHref}
+          <BookNowButton
+            align="right"
             className="whitespace-nowrap bg-brand-400 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-sea-900 transition-colors hover:bg-gold-light"
           >
             {t("bookNow")}
-          </Link>
+          </BookNowButton>
         </div>
 
         <button
@@ -208,13 +209,13 @@ export function Header() {
                 <ThemeToggle />
                 <LanguageSwitcher />
               </div>
-              <Link
-                href={site.bookingHref}
-                onClick={() => setMobileOpen(false)}
+              <BookNowButton
+                align="right"
+                onSelect={() => setMobileOpen(false)}
                 className="bg-brand-400 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-sea-900"
               >
                 {t("bookNow")}
-              </Link>
+              </BookNowButton>
             </div>
           </motion.nav>
         )}

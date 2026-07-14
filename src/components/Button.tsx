@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
 
-type Variant = "primary" | "secondary" | "ghost";
+export type ButtonVariant = "primary" | "secondary" | "ghost";
 
-const styles: Record<Variant, string> = {
+export const buttonStyles: Record<ButtonVariant, string> = {
   primary:
     "px-10 py-4 bg-brand-400 text-sea-900 text-[11px] tracking-[0.2em] uppercase font-sans font-bold hover:bg-gold-light transition-colors duration-300",
   secondary:
@@ -17,6 +17,6 @@ export function LinkButton({
   variant = "primary",
   className = "",
   ...props
-}: LinkProps & { variant?: Variant }) {
-  return <Link {...props} className={`inline-flex items-center justify-center ${styles[variant]} ${className}`} />;
+}: LinkProps & { variant?: ButtonVariant }) {
+  return <Link {...props} className={`inline-flex items-center justify-center ${buttonStyles[variant]} ${className}`} />;
 }

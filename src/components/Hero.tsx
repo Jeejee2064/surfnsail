@@ -42,7 +42,7 @@ export function Hero({ image, imageAlt, eyebrow, title, subtitle, children, prio
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-sea-950/90 via-sea-950/25 to-sea-950/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-sea-950/10 via-sea-950/25 to-sea-950/35" />
         <div className="absolute inset-0 bg-gradient-to-r from-sea-950/40 via-transparent to-transparent" />
       </motion.div>
 

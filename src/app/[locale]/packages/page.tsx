@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { PageIntro } from "@/components/PageIntro";
 import { Reveal } from "@/components/Reveal";
 import { Container } from "@/components/ui";
-import { LinkButton } from "@/components/Button";
+import { BookNowButton } from "@/components/BookNowButton";
 import { PhotoGrid } from "@/components/Gallery";
 import { getPackagesContent } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
@@ -124,9 +124,9 @@ export default async function PackagesPage({
                     <p className="mt-6 text-xs uppercase tracking-wide text-ink/40">{pkg.bestSeason}</p>
                     {pkg.notes && <p className="mt-1 text-xs text-ink/50">{pkg.notes}</p>}
 
-                    <LinkButton href="/contact" variant="primary" className="mt-8">
+                    <BookNowButton variant="primary" className="mt-8">
                       {tCommon("requestToBook")}
-                    </LinkButton>
+                    </BookNowButton>
                   </div>
                 </Reveal>
               );

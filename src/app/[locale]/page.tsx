@@ -10,8 +10,9 @@ import { ParallaxBand } from "@/components/ParallaxBand";
 import { Reveal } from "@/components/Reveal";
 import { Container, Eyebrow, SectionHeading } from "@/components/ui";
 import { LinkButton } from "@/components/Button";
+import { BookNowButton } from "@/components/BookNowButton";
 import { SmartImage } from "@/components/SmartImage";
-import { getHomeContent, getAboutContent } from "@/lib/content";
+import { getHomeContent, getAboutContent, getFleetContent } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
 import { localBusinessJsonLd } from "@/lib/structured-data";
 
@@ -63,6 +64,7 @@ export default async function HomePage({
   const tCommon = await getTranslations({ locale, namespace: "Common" });
   const home = getHomeContent(locale).home;
   const { crew: crewMembers } = getAboutContent(locale);
+  const { fleet } = getFleetContent(locale);
 
   return (
     <>
@@ -78,9 +80,7 @@ export default async function HomePage({
         subtitle={home.hero.subtitle}
         priority
       >
-        <LinkButton href="/contact" variant="primary">
-          {home.hero.ctaPrimary}
-        </LinkButton>
+        <BookNowButton variant="primary">{home.hero.ctaPrimary}</BookNowButton>
         <LinkButton href="/packages" variant="secondary">
           {home.hero.ctaSecondary}
         </LinkButton>
@@ -166,14 +166,26 @@ export default async function HomePage({
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <Reveal className="order-2 lg:order-1">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <SmartImage
-                  src="/catamaran.jpeg"
-                  alt="Aventura and Exta Sea catamarans"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 90vw"
-                  className="object-cover"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                {fleet.map((vessel) => (
+                  <Link
+                    key={vessel.slug}
+                    href={{ pathname: "/fleet", hash: vessel.slug }}
+                    className="group relative block aspect-[3/4] overflow-hidden"
+                  >
+                    <SmartImage
+                      src={vessel.slug === "aventura" ? "/sailing.jpg" : vessel.heroImage}
+                      alt={vessel.name}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, 45vw"
+                      className="object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <span className="absolute bottom-4 left-4 font-display text-lg text-bone">
+                      {vessel.name}
+                    </span>
+                  </Link>
+                ))}
               </div>
             </Reveal>
             <Reveal className="order-1 lg:order-2">
@@ -262,9 +274,9 @@ export default async function HomePage({
             <h2 className="font-display text-[length:var(--text-display)] leading-[0.95] tracking-tight">
               {home.closingCta.heading}
             </h2>
-            <LinkButton href="/contact" variant="primary" className="mt-9">
+            <BookNowButton variant="primary" className="mt-9">
               {tCommon("bookNow")}
-            </LinkButton>
+            </BookNowButton>
           </Reveal>
         </Container>
       </section>

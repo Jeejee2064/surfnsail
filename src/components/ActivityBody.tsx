@@ -4,7 +4,7 @@ import type { Locale } from "@/i18n/routing";
 import { Hero } from "@/components/Hero";
 import { Reveal } from "@/components/Reveal";
 import { Container } from "@/components/ui";
-import { LinkButton } from "@/components/Button";
+import { BookNowButton } from "@/components/BookNowButton";
 import { SmartImage } from "@/components/SmartImage";
 import { PhotoGrid } from "@/components/Gallery";
 import { getActivitiesContent } from "@/lib/content";
@@ -30,9 +30,7 @@ export async function ActivityBody({ locale, slug }: { locale: Locale; slug: Act
         subtitle={activity.subtitle}
         priority
       >
-        <LinkButton href="/contact" variant="primary">
-          {tCommon("requestToBook")}
-        </LinkButton>
+        <BookNowButton variant="primary">{tCommon("requestToBook")}</BookNowButton>
       </Hero>
 
       <section className="py-24 sm:py-32">
@@ -74,9 +72,7 @@ export async function ActivityBody({ locale, slug }: { locale: Locale; slug: Act
           )}
 
           <div className="mt-16 text-center">
-            <LinkButton href="/contact" variant="primary">
-              {tCommon("requestToBook")}
-            </LinkButton>
+            <BookNowButton variant="primary">{tCommon("requestToBook")}</BookNowButton>
           </div>
         </Container>
       </section>

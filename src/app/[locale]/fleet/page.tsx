@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { ParallaxBand } from "@/components/ParallaxBand";
 import { Reveal } from "@/components/Reveal";
 import { Container, Eyebrow } from "@/components/ui";
-import { LinkButton } from "@/components/Button";
+import { BookNowButton } from "@/components/BookNowButton";
 import { SmartImage } from "@/components/SmartImage";
 import { MasonryGallery } from "@/components/Gallery";
 import { getFleetContent } from "@/lib/content";
@@ -161,9 +161,9 @@ export default async function FleetPage({
                   </ul>
                 )}
 
-                <LinkButton href="/contact" variant="primary" className="mt-9">
+                <BookNowButton variant="primary" className="mt-9">
                   {tCommon("requestToBook")}
-                </LinkButton>
+                </BookNowButton>
               </Reveal>
             </div>
           </Container>
