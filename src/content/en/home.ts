@@ -69,6 +69,23 @@ export const home: HomeContent = {
     eyebrow: "Choose Your Adventure",
     heading: "What is your passion?",
   },
+  gallery: {
+    eyebrow: "Bocas Through Our Lens",
+    heading: "Life aboard, in photos",
+    images: [
+      { src: "/gallery/anchor-bay-aerial.jpg", alt: "Aerial view of a catamaran anchored in a turquoise cove off a jungle-fringed island, Bocas del Toro", width: 1920, height: 1080 },
+      { src: "/gallery/reef-islands-aerial.jpg", alt: "Aerial view of small rock islets rising from turquoise reef water in Bocas del Toro", width: 2400, height: 1350 },
+      { src: "/gallery/rainbow-sail.jpg", alt: "Catamaran under a colorful spinnaker sail on open blue water", width: 2400, height: 1350 },
+      { src: "/gallery/sunset-sail-silhouette.jpg", alt: "Sailboat silhouetted against the sun setting over the ocean", width: 2400, height: 1350 },
+      { src: "/gallery/bow-netting-aerial.jpg", alt: "Aerial view of guests relaxing on the bow netting of a catamaran", width: 2400, height: 1350 },
+      { src: "/gallery/bow-toast.jpg", alt: "Guests toasting mugs on the bow of a catamaran under a blue sky", width: 2400, height: 1600 },
+      { src: "/gallery/wahoo-catch.jpg", alt: "Guests holding a freshly caught wahoo on deck", width: 2400, height: 1800 },
+      { src: "/gallery/grilling-catch.jpg", alt: "Fresh-caught fish searing on the onboard grill", width: 1600, height: 2400 },
+      { src: "/gallery/cabin-cheers.jpg", alt: "Guests toasting champagne over a charcuterie board in the catamaran salon", width: 2400, height: 1489 },
+      { src: "/gallery/sunset-bow-group.jpg", alt: "Guests gathered on the bow with drinks at sunset", width: 2400, height: 1600 },
+      { src: "/gallery/mangrove-anchorage.jpg", alt: "Catamaran anchored near a small mangrove-covered islet", width: 1600, height: 2400 },
+    ],
+  },
   crewTeaser: {
     eyebrow: "Meet the Crew",
     heading: "Marius, Mireille & Jeremy",

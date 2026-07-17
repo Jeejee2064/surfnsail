@@ -50,6 +50,17 @@ const AVAILABLE_IMAGES = new Set([
   "/aventura/interior3.jpeg",
   "/aventura/salon.jpg",
   "/aventura/toilet.jpg",
+  "/gallery/anchor-bay-aerial.jpg",
+  "/gallery/reef-islands-aerial.jpg",
+  "/gallery/rainbow-sail.jpg",
+  "/gallery/sunset-sail-silhouette.jpg",
+  "/gallery/bow-netting-aerial.jpg",
+  "/gallery/bow-toast.jpg",
+  "/gallery/wahoo-catch.jpg",
+  "/gallery/grilling-catch.jpg",
+  "/gallery/cabin-cheers.jpg",
+  "/gallery/sunset-bow-group.jpg",
+  "/gallery/mangrove-anchorage.jpg",
 ]);
 
 interface SmartImageProps {

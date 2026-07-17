@@ -92,6 +92,7 @@ export interface HomeContent {
   };
   fleetTeaser: { eyebrow: string; heading: string; body: string; cta: string };
   passions: { eyebrow: string; heading: string };
+  gallery: { eyebrow: string; heading: string; images: GalleryImage[] };
   crewTeaser: { eyebrow: string; heading: string; body: string; cta: string };
   closingCta: { heading: string; cta: string };
 }

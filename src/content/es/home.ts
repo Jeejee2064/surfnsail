@@ -69,6 +69,23 @@ export const home: HomeContent = {
     eyebrow: "Elige Tu Aventura",
     heading: "¿Cuál es tu pasión?",
   },
+  gallery: {
+    eyebrow: "Bocas a Través de Nuestro Lente",
+    heading: "La vida a bordo, en fotos",
+    images: [
+      { src: "/gallery/anchor-bay-aerial.jpg", alt: "Vista aérea de un catamarán anclado en una cala turquesa junto a una isla cubierta de selva, Bocas del Toro", width: 1920, height: 1080 },
+      { src: "/gallery/reef-islands-aerial.jpg", alt: "Vista aérea de pequeños islotes rocosos entre aguas turquesa de arrecife en Bocas del Toro", width: 2400, height: 1350 },
+      { src: "/gallery/rainbow-sail.jpg", alt: "Catamarán navegando con un spinnaker de colores en mar abierto", width: 2400, height: 1350 },
+      { src: "/gallery/sunset-sail-silhouette.jpg", alt: "Velero en silueta contra el sol poniéndose sobre el océano", width: 2400, height: 1350 },
+      { src: "/gallery/bow-netting-aerial.jpg", alt: "Vista aérea de huéspedes relajándose en la red de proa de un catamarán", width: 2400, height: 1350 },
+      { src: "/gallery/bow-toast.jpg", alt: "Huéspedes brindando con tazas en la proa de un catamarán bajo un cielo azul", width: 2400, height: 1600 },
+      { src: "/gallery/wahoo-catch.jpg", alt: "Huéspedes sosteniendo una peto recién pescada en cubierta", width: 2400, height: 1800 },
+      { src: "/gallery/grilling-catch.jpg", alt: "Pescado recién capturado a la parrilla a bordo", width: 1600, height: 2400 },
+      { src: "/gallery/cabin-cheers.jpg", alt: "Huéspedes brindando con champán junto a una tabla de embutidos en el salón del catamarán", width: 2400, height: 1489 },
+      { src: "/gallery/sunset-bow-group.jpg", alt: "Huéspedes reunidos en la proa con bebidas al atardecer", width: 2400, height: 1600 },
+      { src: "/gallery/mangrove-anchorage.jpg", alt: "Catamarán anclado cerca de un pequeño islote de manglar", width: 1600, height: 2400 },
+    ],
+  },
   crewTeaser: {
     eyebrow: "Conoce a la Tripulación",
     heading: "Marius, Mireille y Jeremy",

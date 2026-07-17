@@ -12,6 +12,7 @@ import { Container, Eyebrow, SectionHeading } from "@/components/ui";
 import { LinkButton } from "@/components/Button";
 import { BookNowButton } from "@/components/BookNowButton";
 import { SmartImage } from "@/components/SmartImage";
+import { MasonryGallery } from "@/components/Gallery";
 import { getHomeContent, getAboutContent, getFleetContent } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
 import { localBusinessJsonLd } from "@/lib/structured-data";
@@ -74,8 +75,7 @@ export default async function HomePage({
       />
 
       <Hero
-        image="/droneanchorage.jpeg"
-        imageAlt="Aerial view of a Surfnsail catamaran anchored off a white sand beach in turquoise water, Bocas del Toro"
+        video={{ src: "/hero.mp4", poster: "/hero-poster.jpg" }}
         title={home.hero.title}
         subtitle={home.hero.subtitle}
         priority
@@ -227,6 +227,13 @@ export default async function HomePage({
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="py-24 sm:py-32">
+        <Container>
+          <SectionHeading eyebrow={home.gallery.eyebrow} heading={home.gallery.heading} align="center" />
+          <MasonryGallery images={home.gallery.images} />
         </Container>
       </section>
 

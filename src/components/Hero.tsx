@@ -6,15 +6,18 @@ import Image from "next/image";
 import { SmartImage } from "./SmartImage";
 import type { ReactNode } from "react";
 
-interface HeroProps {
-  image: string;
-  imageAlt: string;
+interface HeroVideo {
+  src: string;
+  poster: string;
+}
+
+type HeroProps = {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   children?: ReactNode;
   priority?: boolean;
-}
+} & ({ image: string; imageAlt: string; video?: undefined } | { video: HeroVideo; image?: undefined; imageAlt?: undefined });
 
 // Full-bleed cinematic hero with layered parallax: the background image
 // drifts slower than scroll, foreground content slower still, and a gentle
@@ -22,7 +25,12 @@ interface HeroProps {
 // scroll, and a scroll cue invites the next move. Disabled automatically for
 // reduced motion via the scroll-driven transforms simply not mattering much
 // at rest.
-export function Hero({ image, imageAlt, eyebrow, title, subtitle, children, priority }: HeroProps) {
+//
+// Passing `video` instead of `image` swaps the background for a looping
+// muted <video>, poster-first so the LCP paint never waits on the video
+// stream. The video sits behind everything else via -z-10 rather than DOM
+// order, since it isn't wrapped in the parallax motion.div the image uses.
+export function Hero({ image, imageAlt, video, eyebrow, title, subtitle, children, priority }: HeroProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
@@ -30,21 +38,39 @@ export function Hero({ image, imageAlt, eyebrow, title, subtitle, children, prio
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div ref={ref} className="relative flex min-h-[max(560px,92svh)] w-full flex-col overflow-hidden bg-sea-950">
-      <motion.div style={{ y: imageY }} className="absolute inset-0 motion-reduce:!transform-none">
-        <div className="absolute inset-0 animate-[kenburns_16s_ease-out_forwards] motion-reduce:animate-none">
-          <SmartImage
-            src={image}
-            alt={imageAlt}
-            fill
-            priority={priority}
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-sea-950/10 via-sea-950/25 to-sea-950/35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-sea-950/40 via-transparent to-transparent" />
-      </motion.div>
+    <div ref={ref} className="relative isolate flex min-h-[max(560px,92svh)] w-full flex-col overflow-hidden bg-sea-950">
+      {video ? (
+        <>
+          <video
+            className="absolute inset-0 -z-10 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={video.poster}
+          >
+            <source src={video.src} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-sea-950/10 via-sea-950/25 to-sea-950/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-sea-950/40 via-transparent to-transparent" />
+        </>
+      ) : (
+        <motion.div style={{ y: imageY }} className="absolute inset-0 motion-reduce:!transform-none">
+          <div className="absolute inset-0 animate-[kenburns_16s_ease-out_forwards] motion-reduce:animate-none">
+            <SmartImage
+              src={image}
+              alt={imageAlt}
+              fill
+              priority={priority}
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sea-950/10 via-sea-950/25 to-sea-950/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-sea-950/40 via-transparent to-transparent" />
+        </motion.div>
+      )}
 
       <Image
         src="/logo-icon.png"
