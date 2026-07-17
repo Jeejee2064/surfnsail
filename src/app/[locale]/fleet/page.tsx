@@ -72,7 +72,7 @@ export default async function FleetPage({
       ))}
 
       <ParallaxBand
-        image="/catamaran.jpeg"
+        image="/fleetHero.jpeg"
         imageAlt="Surfnsail catamaran fleet underway in Bocas del Toro"
         eyebrow={fleetIntro.eyebrow}
         heading={fleetIntro.heading}

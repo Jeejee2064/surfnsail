@@ -41,7 +41,7 @@ export function ParallaxBand({
       <motion.div style={{ y: imageY }} className="absolute inset-0 scale-125 motion-reduce:!transform-none">
         <SmartImage src={image} alt={imageAlt} fill sizes="100vw" className="object-cover" />
       </motion.div>
-      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 bg-black/65" />
 
       <motion.div
         style={{ y: contentY }}

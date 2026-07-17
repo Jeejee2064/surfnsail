@@ -6,7 +6,8 @@ import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { PageIntro } from "@/components/PageIntro";
 import { Reveal } from "@/components/Reveal";
-import { Container } from "@/components/ui";
+import { Container, Eyebrow } from "@/components/ui";
+import { ReviewsGrid } from "@/components/ReviewsGrid";
 import { getReviewsContent } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd, reviewsJsonLd } from "@/lib/structured-data";
@@ -37,18 +38,6 @@ export async function generateMetadata({
   return buildMetadata({ locale, path: "/reviews", ...copy });
 }
 
-function Stars({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5 text-brand-600" aria-hidden="true">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill={i < rating ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1">
-          <path d="M10 1.5l2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 7.9l6-.8L10 1.5Z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 export default async function ReviewsPage({
   params,
 }: {
@@ -60,6 +49,8 @@ export default async function ReviewsPage({
   setRequestLocale(locale);
 
   const { reviewsIntro, reviews } = getReviewsContent(locale);
+  const aventuraReviews = reviews.filter((r) => r.boat === "aventura");
+  const extaSeaReviews = reviews.filter((r) => r.boat === "exta-sea");
   const breadcrumb = breadcrumbJsonLd(locale, [
     { name: "Home", path: "" },
     { name: "Reviews", path: "/reviews" },
@@ -78,26 +69,30 @@ export default async function ReviewsPage({
 
       <PageIntro eyebrow={reviewsIntro.eyebrow} title={reviewsIntro.heading} subtitle={reviewsIntro.body} compact />
 
-      <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
+      <section className="pb-16 pt-12 sm:pt-16">
         <Container>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {reviews.map((review, i) => (
-              <Reveal key={`${review.name}-${review.date}`} delay={i * 60}>
-                <div className="flex h-full flex-col border border-white/10 bg-tint p-8">
-                  <Stars rating={review.rating} />
-                  <p className="mt-4 flex-1 font-display text-lg italic leading-relaxed text-ink/75">&ldquo;{review.text}&rdquo;</p>
-                  <div className="mt-6 border-t border-ink/10 pt-4">
-                    <p className="font-medium text-ink">{review.name}</p>
-                    <p className="text-xs text-ink/50">
-                      {new Date(review.date).toLocaleDateString(locale === "es" ? "es-PA" : "en-US", {
-                        year: "numeric",
-                        month: "long",
-                      })}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+          <Reveal>
+            <Eyebrow>Aventura</Eyebrow>
+            <p className="mt-2 text-sm text-ink/50">
+              {locale === "es" ? "Capitaneado por Marius" : "Captained by Marius"}
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <ReviewsGrid reviews={aventuraReviews} locale={locale} perPage={6} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink/10 py-16 sm:py-24">
+        <Container>
+          <Reveal>
+            <Eyebrow>Exta Sea</Eyebrow>
+            <p className="mt-2 text-sm text-ink/50">
+              {locale === "es" ? "Capitaneado por Jeremy" : "Captained by Jeremy"}
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <ReviewsGrid reviews={extaSeaReviews} locale={locale} perPage={6} />
           </div>
         </Container>
       </section>

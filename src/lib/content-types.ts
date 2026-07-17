@@ -76,9 +76,11 @@ export interface FaqCategory {
 export interface Review {
   name: string;
   date: string;
-  rating: number;
+  rating?: number;
+  title?: string;
   text: string;
   source?: string;
+  boat: "aventura" | "exta-sea";
 }
 
 export interface HomeContent {

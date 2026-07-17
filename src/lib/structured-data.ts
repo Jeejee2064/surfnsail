@@ -118,22 +118,28 @@ export function faqJsonLd(faq: FaqItem[]) {
 }
 
 export function reviewsJsonLd(reviews: Review[]) {
-  const average =
-    reviews.reduce((sum, r) => sum + r.rating, 0) / Math.max(reviews.length, 1);
+  const rated = reviews.filter((r): r is Review & { rating: number } => typeof r.rating === "number");
+  const average = rated.length
+    ? rated.reduce((sum, r) => sum + r.rating, 0) / rated.length
+    : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: site.legalName,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: average.toFixed(1),
-      reviewCount: reviews.length,
-    },
+    ...(average !== undefined && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: average.toFixed(1),
+        reviewCount: reviews.length,
+      },
+    }),
     review: reviews.map((r) => ({
       "@type": "Review",
       author: { "@type": "Person", name: r.name },
       datePublished: r.date,
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+      ...(typeof r.rating === "number" && {
+        reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+      }),
       reviewBody: r.text,
     })),
   };
