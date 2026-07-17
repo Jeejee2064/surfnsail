@@ -50,7 +50,7 @@ export function ParallaxBand({
         }`}
       >
         <div className={align === "center" ? "max-w-2xl" : "max-w-xl"}>
-          {eyebrow && <p className="eyebrow mb-4 text-black-100">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow mb-4 text-sand-100">{eyebrow}</p>}
           <h2 className="font-display text-[length:var(--text-display)] font-semibold leading-[0.95] tracking-tight text-bone">
             {heading}
           </h2>
