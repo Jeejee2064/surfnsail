@@ -44,6 +44,8 @@
     "name": "Full name",
     "email": "Email address",
     "dates": "Preferred dates",
+    "datesPlaceholder": "Select dates",
+    "datesClear": "Clear dates",
     "partySize": "Party size",
     "message": "Tell us about your trip",
     "submit": "Send Enquiry",

@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { DateRangeField } from "./DateRangeField";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -81,11 +82,7 @@ export function ContactForm() {
         </label>
         <label className="block text-sm">
           <span className="mb-1.5 block font-medium text-ink">{t("dates")}</span>
-          <input
-            name="dates"
-            type="text"
-            className="w-full border border-ink/15 bg-tint px-4 py-3 text-ink outline-none transition-colors focus:border-brand-600"
-          />
+          <DateRangeField name="dates" />
         </label>
         <label className="block text-sm">
           <span className="mb-1.5 block font-medium text-ink">{t("partySize")}</span>

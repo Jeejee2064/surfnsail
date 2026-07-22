@@ -44,6 +44,8 @@
     "name": "Nombre completo",
     "email": "Correo electrónico",
     "dates": "Fechas preferidas",
+    "datesPlaceholder": "Selecciona las fechas",
+    "datesClear": "Borrar fechas",
     "partySize": "Número de personas",
     "message": "Cuéntanos sobre tu viaje",
     "submit": "Enviar Consulta",

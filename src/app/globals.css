@@ -215,3 +215,36 @@ body {
     transparent
   );
 }
+
+/* react-day-picker theme — matches the ContactForm date-range field to the
+   site's design tokens instead of the library's default blue. */
+.rdp-surfnsail {
+  --rdp-accent-color: var(--color-brand-600);
+  --rdp-accent-background-color: color-mix(in srgb, var(--color-brand-600) 20%, transparent);
+  --rdp-today-color: var(--color-brand-400);
+  --rdp-day-width: 2.25rem;
+  --rdp-day-height: 2.25rem;
+  --rdp-day_button-width: 2.1rem;
+  --rdp-day_button-height: 2.1rem;
+  --rdp-range_start-color: var(--color-sea-900);
+  --rdp-range_end-color: var(--color-sea-900);
+  --rdp-disabled-opacity: 0.3;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.rdp-surfnsail .rdp-day_button:hover:not([disabled]) {
+  background-color: color-mix(in srgb, var(--color-brand-600) 25%, transparent);
+}
+
+.rdp-surfnsail .rdp-weekday {
+  color: var(--color-ink);
+}
+
+.rdp-surfnsail .rdp-chevron {
+  fill: var(--color-brand-600);
+}
+
+.rdp-surfnsail .rdp-month_caption {
+  color: var(--color-ink);
+}

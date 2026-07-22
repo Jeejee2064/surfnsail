@@ -77,7 +77,6 @@ export const home: HomeContent = {
       { src: "/gallery/reef-islands-aerial.jpg", alt: "Aerial view of small rock islets rising from turquoise reef water in Bocas del Toro", width: 2400, height: 1350 },
       { src: "/gallery/rainbow-sail.jpg", alt: "Catamaran under a colorful spinnaker sail on open blue water", width: 2400, height: 1350 },
       { src: "/gallery/sunset-sail-silhouette.jpg", alt: "Sailboat silhouetted against the sun setting over the ocean", width: 2400, height: 1350 },
-      { src: "/gallery/trampoline-sunbathers-aerial.jpg", alt: "Aerial view of guests relaxing on the bow trampoline of a catamaran", width: 4000, height: 2250 },
       { src: "/gallery/bow-toast.jpg", alt: "Guests toasting mugs on the bow of a catamaran under a blue sky", width: 2400, height: 1600 },
       { src: "/gallery/wahoo-catch.jpg", alt: "Guests holding a freshly caught wahoo on deck", width: 2400, height: 1800 },
       { src: "/gallery/grilling-catch.jpg", alt: "Fresh-caught fish searing on the onboard grill", width: 1600, height: 2400 },

@@ -61,6 +61,8 @@ export const fleet: Vessel[] = [
       { src: "/chill.jpeg", width: 4032, height: 3024, alt: "Asientos alrededor de la mesa de cabina de Exta Sea" },
       { src: "/livingroomsailboat.jpeg", width: 4032, height: 3024, alt: "Asientos del salón de Exta Sea" },
       { src: "/livingroomsailboat2.jpeg", width: 4032, height: 3024, alt: "Salón de Exta Sea, vista hacia la cocina" },
+      { src: "/cabin.jpeg", width: 1200, height: 900, alt: "Una de las cabinas de huéspedes de Exta Sea, con un tríptico de playa sobre la litera" },
+      { src: "/cabin2.jpeg", width: 1200, height: 1600, alt: "Litera de una cabina de huéspedes de Exta Sea, vista hacia los escalones del baño en suite" },
       { src: "/inside.jpeg", width: 3024, height: 4032, alt: "Interior bajo cubierta de Exta Sea" },
       { src: "/bathroom.jpeg", width: 3024, height: 4032, alt: "Uno de los baños de Exta Sea" },
       { src: "/fridgewashingmachine.jpeg", width: 3024, height: 4032, alt: "Nevera y lavadora de la cocina de Exta Sea" },
