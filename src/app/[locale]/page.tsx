@@ -103,7 +103,7 @@ export default async function HomePage({
             <Reveal delay={120}>
               <div className="relative aspect-[4/3] overflow-hidden">
                 <SmartImage
-                  src="/chill.jpeg"
+                  src="/escudo.jpg"
                   alt="A guest relaxing on the trampoline netting of a Surfnsail catamaran over turquoise water"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"

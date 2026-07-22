@@ -11,6 +11,7 @@ const AVAILABLE_IMAGES = new Set([
   "/catamaran.jpeg",
   "/catamaran2.jpeg",
   "/drone.JPG",
+  "/escudo.jpg",
   "/droneanchorage.jpeg",
   "/skipper.jpeg",
   "/skipper2.jpeg",
