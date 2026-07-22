@@ -77,7 +77,7 @@ export const home: HomeContent = {
       { src: "/gallery/reef-islands-aerial.jpg", alt: "Vista aérea de pequeños islotes rocosos entre aguas turquesa de arrecife en Bocas del Toro", width: 2400, height: 1350 },
       { src: "/gallery/rainbow-sail.jpg", alt: "Catamarán navegando con un spinnaker de colores en mar abierto", width: 2400, height: 1350 },
       { src: "/gallery/sunset-sail-silhouette.jpg", alt: "Velero en silueta contra el sol poniéndose sobre el océano", width: 2400, height: 1350 },
-      { src: "/gallery/bow-netting-aerial.jpg", alt: "Vista aérea de huéspedes relajándose en la red de proa de un catamarán", width: 2400, height: 1350 },
+      { src: "/gallery/trampoline-sunbathers-aerial.jpg", alt: "Vista aérea de huéspedes relajándose en el trampolín de proa de un catamarán", width: 4000, height: 2250 },
       { src: "/gallery/bow-toast.jpg", alt: "Huéspedes brindando con tazas en la proa de un catamarán bajo un cielo azul", width: 2400, height: 1600 },
       { src: "/gallery/wahoo-catch.jpg", alt: "Huéspedes sosteniendo una peto recién pescada en cubierta", width: 2400, height: 1800 },
       { src: "/gallery/grilling-catch.jpg", alt: "Pescado recién capturado a la parrilla a bordo", width: 1600, height: 2400 },
@@ -88,8 +88,8 @@ export const home: HomeContent = {
   },
   crewTeaser: {
     eyebrow: "Conoce a la Tripulación",
-    heading: "Marius, Mireille y Jeremy",
-    body: "Fundado en 2021 por navegantes de toda la vida, Surfnsail cuenta hoy con dos capitanes y dos embarcaciones, con la misma dedicación por ofrecer un charter impecable e inolvidable.",
+    heading: "Las personas detrás de cada charter",
+    body: "Fundado en 2021 por navegantes de toda la vida, Surfnsail cuenta hoy con un equipo de seis personas y dos embarcaciones, con la misma dedicación por ofrecer un charter impecable e inolvidable.",
     cta: "Conocer a la Tripulación",
   },
   closingCta: {

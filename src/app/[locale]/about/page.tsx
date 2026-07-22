@@ -7,7 +7,6 @@ import { routing } from "@/i18n/routing";
 import { PageIntro } from "@/components/PageIntro";
 import { Reveal } from "@/components/Reveal";
 import { Container } from "@/components/ui";
-import { SmartImage } from "@/components/SmartImage";
 import { getAboutContent } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
@@ -25,14 +24,14 @@ export async function generateMetadata({
   const copy =
     locale === "es"
       ? {
-          title: "Quiénes Somos — Marius, Mireille y Jeremy | Surfnsail",
+          title: "Nuestra Historia — Cómo Empezó Todo | Surfnsail",
           description:
-            "Conoce a Marius, Mireille y el capitán Jeremy, el equipo detrás de Surfnsail, charters de vela de lujo en Bocas del Toro, Panamá desde 2021.",
+            "Cómo Marius y Mireille navegaron desde Ciudad del Cabo hasta Bocas del Toro, Panamá, y fundaron Surfnsail en 2021.",
         }
       : {
-          title: "Who We Are — Marius, Mireille & Jeremy | Surfnsail",
+          title: "Our Story — Where It All Began | Surfnsail",
           description:
-            "Meet Marius, Mireille and Captain Jeremy, the team behind Surfnsail, luxury sailing charters in Bocas del Toro, Panama since 2021.",
+            "How Marius and Mireille sailed from Cape Town to Bocas del Toro, Panama, and founded Surfnsail in 2021.",
         };
 
   return buildMetadata({ locale, path: "/about", ...copy });
@@ -48,7 +47,7 @@ export default async function AboutPage({
   const locale = rawLocale as Locale;
   setRequestLocale(locale);
 
-  const { aboutIntro, captainBoatNote, crew } = getAboutContent(locale);
+  const { aboutIntro, captainBoatNote } = getAboutContent(locale);
   const breadcrumb = breadcrumbJsonLd(locale, [
     { name: "Home", path: "" },
     { name: "About", path: "/about" },
@@ -73,47 +72,6 @@ export default async function AboutPage({
             </div>
             <p className="eyebrow mt-6 text-brand-600">{captainBoatNote}</p>
           </Reveal>
-        </Container>
-      </section>
-
-      <section className="bg-tint py-24 sm:py-32">
-        <Container>
-          <div className="space-y-20">
-            {crew.map((member, i) => (
-              <Reveal key={member.slug}>
-                <div
-                  className={`grid gap-10 lg:items-start ${
-                    i % 2 === 1 ? "lg:grid-cols-[1fr_240px]" : "lg:grid-cols-[240px_1fr]"
-                  }`}
-                >
-                  <div
-                    className={`relative mx-auto aspect-[3/4] w-full max-w-[220px] overflow-hidden lg:max-w-none ${
-                      i % 2 === 1 ? "lg:order-2" : ""
-                    }`}
-                  >
-                    <SmartImage
-                      src={member.photo}
-                      alt={`Portrait of ${member.name}, ${member.role}`}
-                      fill
-                      sizes="(min-width: 1024px) 240px, 220px"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                    <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] tracking-tight text-ink">
-                      {member.name}
-                    </h2>
-                    <p className="eyebrow mt-2 text-brand-600">{member.role}</p>
-                    <div className="mt-6 space-y-4 whitespace-pre-line text-base leading-relaxed text-ink/70">
-                      {member.bio.map((p) => (
-                        <p key={p}>{p}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
     </>

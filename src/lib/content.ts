@@ -3,6 +3,8 @@ import * as enHome from "@/content/en/home";
 import * as esHome from "@/content/es/home";
 import * as enAbout from "@/content/en/about";
 import * as esAbout from "@/content/es/about";
+import * as enCrew from "@/content/en/crew";
+import * as esCrew from "@/content/es/crew";
 import * as enFleet from "@/content/en/fleet";
 import * as esFleet from "@/content/es/fleet";
 import * as enPackages from "@/content/en/packages";
@@ -20,6 +22,10 @@ export function getHomeContent(locale: Locale) {
 
 export function getAboutContent(locale: Locale) {
   return locale === "es" ? esAbout : enAbout;
+}
+
+export function getCrewContent(locale: Locale) {
+  return locale === "es" ? esCrew : enCrew;
 }
 
 export function getFleetContent(locale: Locale) {

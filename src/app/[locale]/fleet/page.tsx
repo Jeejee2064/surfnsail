@@ -72,8 +72,8 @@ export default async function FleetPage({
       ))}
 
       <ParallaxBand
-        image="/fleetHero.jpeg"
-        imageAlt="Surfnsail catamaran fleet underway in Bocas del Toro"
+        image="/drone.JPG"
+        imageAlt="Aerial drone view of Surfnsail's two catamarans, Aventura and Exta Sea, anchored side by side near a small island in Bocas del Toro"
         eyebrow={fleetIntro.eyebrow}
         heading={fleetIntro.heading}
         body={fleetIntro.body}

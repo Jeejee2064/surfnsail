@@ -44,9 +44,10 @@ export function Header() {
 
   const condensed = scrolled || !hasHeroBackdrop(pathname);
 
-  const links: { href: "/" | "/about" | "/fleet" | "/packages" | "/reviews" | "/faq" | "/contact"; label: string }[] = [
+  const links: { href: "/" | "/about" | "/crew" | "/fleet" | "/packages" | "/reviews" | "/faq" | "/contact"; label: string }[] = [
     { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
+    { href: "/crew", label: t("crew") },
     { href: "/fleet", label: t("fleet") },
     { href: "/packages", label: t("packages") },
   ];

@@ -34,6 +34,7 @@ export function Footer() {
             <p className="eyebrow text-sand-200">{tFooter("quickLinks")}</p>
             <ul className="mt-4 space-y-2.5 text-sm text-sand-100/90">
               <li><Link href="/about" className="hover:text-bone">{tNav("about")}</Link></li>
+              <li><Link href="/crew" className="hover:text-bone">{tNav("crew")}</Link></li>
               <li><Link href="/fleet" className="hover:text-bone">{tNav("fleet")}</Link></li>
               <li><Link href="/packages" className="hover:text-bone">{tNav("packages")}</Link></li>
               <li><Link href="/reviews" className="hover:text-bone">{tNav("reviews")}</Link></li>

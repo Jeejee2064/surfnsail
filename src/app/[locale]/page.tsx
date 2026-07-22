@@ -13,7 +13,7 @@ import { LinkButton } from "@/components/Button";
 import { BookNowButton } from "@/components/BookNowButton";
 import { SmartImage } from "@/components/SmartImage";
 import { MasonryGallery } from "@/components/Gallery";
-import { getHomeContent, getAboutContent, getFleetContent } from "@/lib/content";
+import { getHomeContent, getCrewContent, getFleetContent } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
 import { localBusinessJsonLd } from "@/lib/structured-data";
 
@@ -64,7 +64,7 @@ export default async function HomePage({
   const t = await getTranslations({ locale, namespace: "Nav" });
   const tCommon = await getTranslations({ locale, namespace: "Common" });
   const home = getHomeContent(locale).home;
-  const { crew: crewMembers } = getAboutContent(locale);
+  const { crew: crewMembers } = getCrewContent(locale);
   const { fleet } = getFleetContent(locale);
 
   return (
@@ -240,10 +240,10 @@ export default async function HomePage({
       <section className="py-24 sm:py-32">
         <Container>
           <SectionHeading eyebrow={home.crewTeaser.eyebrow} heading={home.crewTeaser.heading} body={home.crewTeaser.body} align="center" />
-          <div className="mx-auto mt-16 grid max-w-xl gap-10 sm:grid-cols-2">
+          <div className="mx-auto mt-16 grid max-w-3xl gap-10 sm:grid-cols-3">
             {crewMembers.map((member, i) => (
               <Reveal key={member.slug} delay={i * 100}>
-                <Link href="/about" className="group block text-center">
+                <Link href="/crew" className="group block text-center">
                   <div className="relative mx-auto aspect-square w-40 overflow-hidden rounded-full">
                     <SmartImage
                       src={member.photo}
@@ -260,7 +260,7 @@ export default async function HomePage({
             ))}
           </div>
           <div className="mt-14 text-center">
-            <LinkButton href="/about" variant="ghost">
+            <LinkButton href="/crew" variant="ghost">
               {home.crewTeaser.cta}
             </LinkButton>
           </div>
