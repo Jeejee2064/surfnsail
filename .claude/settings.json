@@ -24,7 +24,33 @@
       "Bash(echo \"exit:$?\")",
       "Bash(npx tailwindcss *)",
       "Bash(timeout 100 npx next build)",
-      "Bash(xargs sed -i -E 's/text-\\\\[var\\\\\\(--text-\\([a-z0-9]+\\)\\\\\\)\\\\]/text-[length:var\\(--text-\\\\1\\)]/g')"
+      "Bash(xargs sed -i -E 's/text-\\\\[var\\\\\\(--text-\\([a-z0-9]+\\)\\\\\\)\\\\]/text-[length:var\\(--text-\\\\1\\)]/g')",
+      "Bash(identify \"public/New pics/DJI_0373.JPG\")",
+      "Bash(mv \"Marius Swart.jpeg\" \"marius-swart.jpeg\")",
+      "Bash(mv \"Mireille Robinson.jpeg\" \"mireille-robinson.jpeg\")",
+      "Bash(mv \"Genna .jpeg\" \"genna.jpeg\")",
+      "Bash(mv \"Maga.jpeg\" \"maga.jpeg\")",
+      "Bash(cp \"public/New pics/DJI_0373.JPG\" \"public/gallery/trampoline-sunbathers-aerial.jpg\")",
+      "Bash(cp \"public/New pics/DJI_0474.JPG\" \"public/fleet-hero-aerial.jpg\")",
+      "Bash(mkdir -p \"/home/yerom/Desktop/WEB/SurfnSail/surfnsail/src/app/[locale]/crew\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3000/en/crew)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3000/es/crew)",
+      "Bash(curl -s -L http://localhost:3000/en/crew)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3001/en/crew)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3001/es/crew)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3001/en/about)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3001/en/fleet)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L http://localhost:3001/en)",
+      "Bash(curl -s -L http://localhost:3001/en)",
+      "Bash(curl -s -L http://localhost:3001/en/fleet)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/marius-swart.jpeg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/maga.jpeg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/fleet-hero-aerial.jpg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/gallery/trampoline-sunbathers-aerial.jpg)",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "/home/yerom/Desktop/WEB/SurfnSail/surfnsail/src/app/[locale]"
     ]
   }
 }
