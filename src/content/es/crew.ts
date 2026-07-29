@@ -35,7 +35,7 @@ export const crew: CrewMember[] = [
     slug: "maga",
     name: "Alberto Maga",
     role: "Capitán, Aventura",
-    photo: "/maga.jpeg",
+    photo: "/maga.webp",
     bio: [
       "Soy capitán profesional desde 2001, realizando tours por todo el archipiélago de Bocas del Toro durante más de dos décadas. Tengo experiencia operando catamaranes Fountaine Pajot y desde entonces he pasado a capitanear catamaranes Leopard, lo que me da un profundo conocimiento de la navegación en multicasco en estas aguas.",
       "He completado más de 200 tours en algunos años, navegando las islas, arrecifes y canales de Bocas del Toro en casi todas las condiciones imaginables. He trabajado extensamente como capitán profesional en la zona, construyendo una reputación de charters seguros, confiables y placenteros para huéspedes de todos los niveles de experiencia.",
@@ -55,7 +55,7 @@ export const crew: CrewMember[] = [
     slug: "genna",
     name: "Genna van Niekerk",
     role: "Chef / Camarera",
-    photo: "/genna.jpeg",
+    photo: "/genna.webp",
     bio: [
       "¡Hola! Soy Genna, y soy la chef y camarera a bordo desde 2024. Me encanta crear comidas deliciosas y frescas para nuestros huéspedes, mientras me aseguro de que todos se sientan relajados, cómodos y bien atendidos durante todo el día.",
       "Cuando no estoy en el agua, normalmente me encontrarás dirigiendo mis dos restaurantes en la hermosa Bocas del Toro. La hospitalidad siempre ha sido una gran parte de mi vida, pero hay algo especial en cambiar la cocina por el mar. Me encanta pasar el día rodeada de océano y naturaleza, explorar las increíbles islas, y compartir este hermoso rincón de Panamá con visitantes de todo el mundo.",
@@ -66,7 +66,7 @@ export const crew: CrewMember[] = [
     slug: "daniela",
     name: "Daniela Elizondo",
     role: "Anfitriona",
-    photo: "/daniela.jpg",
+    photo: "/daniela.jpeg",
     bio: [
       "¡Hola! Soy Daniela, y me uní al equipo este año como anfitriona. Me encanta recibir a los huéspedes a bordo y ayudar a crear una experiencia divertida, relajante e inolvidable en el agua.",
       "Cuando no estoy en el mar, soy veterinaria e instructora de yoga. Ambos roles me han enseñado la importancia de la compasión, la atención plena y el cuidado de los demás — cualidades que llevo conmigo cada día a bordo.",

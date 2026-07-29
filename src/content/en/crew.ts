@@ -35,7 +35,7 @@ export const crew: CrewMember[] = [
     slug: "maga",
     name: "Alberto Maga",
     role: "Captain, Aventura",
-    photo: "/maga.jpeg",
+    photo: "/maga.webp",
     bio: [
       "I have been a professional captain since 2001, doing tours throughout the Bocas del Toro archipelago for over two decades. I'm experienced in operating Fountaine Pajot catamarans and have since moved on to skippering Leopard catamarans, giving me a deep familiarity with multihull sailing in these waters.",
       "I've completed over 200 tours in some years, navigating the islands, reefs, and channels of Bocas del Toro in nearly every condition imaginable. I've worked extensively as a professional captain in the area, building a reputation for safe, reliable, and enjoyable charters for guests of all experience levels.",
@@ -55,7 +55,7 @@ export const crew: CrewMember[] = [
     slug: "genna",
     name: "Genna van Niekerk",
     role: "Chef / Stew",
-    photo: "/genna.jpeg",
+    photo: "/genna.webp",
     bio: [
       "Hi! I'm Genna, and I've been the Chef and Steward on board since 2024. I love creating delicious, fresh meals for our guests while making sure everyone feels relaxed, comfortable, and well looked after throughout the day.",
       "When I'm not out on the water, you'll usually find me running my two restaurants in beautiful Bocas del Toro. Hospitality has always been a huge part of my life, but there's something special about swapping the kitchen for the sea. I love spending the day surrounded by the ocean and nature, exploring the incredible islands, and sharing this beautiful corner of Panama with visitors from around the world.",
@@ -66,7 +66,7 @@ export const crew: CrewMember[] = [
     slug: "daniela",
     name: "Daniela Elizondo",
     role: "Host",
-    photo: "/daniela.jpg",
+    photo: "/daniela.jpeg",
     bio: [
       "Hi! I'm Daniela, and I joined the team this year as a host. I love welcoming guests on board and helping create a fun, relaxing, and unforgettable experience out on the water.",
       "When I'm not at sea, I'm a veterinarian and a yoga instructor. Both of these roles have taught me the importance of compassion, mindfulness, and caring for others — qualities I bring with me every day on the boat.",
