@@ -67,5 +67,39 @@ export async function POST(request: Request) {
     return Response.json({ error: "send_failed" }, { status: 502 });
   }
 
+  // Confirmation copy back to the client. Best-effort: the enquiry has
+  // already reached the business above, so a failure here shouldn't fail
+  // the whole request — just log it.
+  const { error: confirmationError } = await resend.emails.send({
+    from: `${site.name} <enquiries@${site.domain}>`,
+    to: email,
+    replyTo: site.email,
+    subject: isEs ? "Hemos recibido tu consulta — Surfnsail" : "We've received your enquiry — Surfnsail",
+    text: [
+      isEs ? `Hola ${name},` : `Hi ${name},`,
+      "",
+      isEs
+        ? "Gracias por contactar a Surfnsail. Hemos recibido tu consulta y nuestro equipo te responderá en breve."
+        : "Thanks for reaching out to Surfnsail. We've received your enquiry and our team will get back to you shortly.",
+      "",
+      isEs ? "Resumen de tu consulta:" : "Summary of your enquiry:",
+      `${isEs ? "Fechas preferidas" : "Preferred dates"}: ${dates || "—"}`,
+      `${isEs ? "Tamaño del grupo" : "Party size"}: ${partySize || "—"}`,
+      "",
+      message,
+      "",
+      isEs
+        ? `Si necesitas contactarnos antes, escríbenos a ${site.email} o por WhatsApp: ${site.phone}.`
+        : `If you need to reach us sooner, email ${site.email} or WhatsApp us at ${site.phone}.`,
+      "",
+      site.legalName,
+      site.url,
+    ].join("\n"),
+  });
+
+  if (confirmationError) {
+    console.error("Resend confirmation error", confirmationError);
+  }
+
   return Response.json({ ok: true });
 }
