@@ -3,9 +3,9 @@
 export const site = {
   name: "Surfnsail",
   legalName: "Surfnsail — Luxury Sailing Charters",
-  domain: "surfnsail.pa",
-  url: "https://surfnsail.pa",
-  email: "info@surfnsail.pa",
+  domain: "surfnsail.com.pa",
+  url: "https://surfnsail.com.pa",
+  email: "info@surfnsail.com.pa",
   phone: "+507 6047 1107",
   phoneHref: "tel:+50760471107",
   whatsappHref: "https://wa.me/50760471107",
