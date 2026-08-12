@@ -17,6 +17,10 @@ const paths = [
   "/contact",
 ];
 
+// Required for `output: "export"`: bakes the sitemap in at build time
+// (lastModified becomes the build date) instead of per-request.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => ({
     url: `${site.url}/${routing.defaultLocale}${path}`,

@@ -6,6 +6,11 @@ import { DateRangeField } from "./DateRangeField";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+// On the static export (cPanel) there's no local /api route, so this points
+// at wherever /api/contact is actually hosted (e.g. the Vercel deployment).
+// Regular builds leave it unset and keep using the same-origin relative path.
+const CONTACT_API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL || "/api/contact";
+
 export function ContactForm() {
   const t = useTranslations("ContactForm");
   const locale = useLocale();
@@ -28,7 +33,7 @@ export function ContactForm() {
     };
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(CONTACT_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

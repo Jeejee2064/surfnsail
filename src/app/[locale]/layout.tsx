@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import Script from "next/script";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -45,17 +45,18 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
-  // Theme is read from a cookie server-side so the correct palette renders
-  // on the very first paint — no client script, no flash, no hydration diff.
-  const theme = (await cookies()).get("theme")?.value === "light" ? "light" : undefined;
-
   return (
     <html
       lang={locale}
-      data-theme={theme}
       className={`${bodoni.variable} ${cormorant.variable} ${inter.variable} ${yellowtail.variable} antialiased`}
     >
       <body className="flex min-h-screen flex-col bg-page text-ink">
+        {/* Reads the theme cookie and sets data-theme before hydration, so the
+            correct palette renders on first paint with no flash — same effect
+            as the old server-side cookie read, but works on static export too. */}
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`try{var m=document.cookie.match(/(?:^|; )theme=([^;]+)/);if(m&&m[1]==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(locale)) }}
