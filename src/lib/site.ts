@@ -3,8 +3,11 @@
 export const site = {
   name: "Surfnsail",
   legalName: "Surfnsail — Luxury Sailing Charters",
-  domain: "surfnsail.com.pa",
-  url: "https://surfnsail.com.pa",
+  // The site's real domain is surfnsail.pa (see `url` below). emailDomain is
+  // a separate domain verified in Resend purely for sending transactional
+  // email — kept apart so it doesn't touch surfnsail.pa's own DNS/reputation.
+  emailDomain: "surfnsail.com.pa",
+  url: "https://surfnsail.pa",
   email: "info@surfnsail.pa",
   phone: "+507 6047 1107",
   phoneHref: "tel:+50760471107",

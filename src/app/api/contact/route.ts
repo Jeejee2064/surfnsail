@@ -15,39 +15,64 @@ interface ContactPayload {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// The marketing site is static files on a separate host (cPanel), so this
+// route gets called cross-origin. Only the site's own domains may call it.
+const ALLOWED_ORIGINS = new Set([
+  site.url,
+  site.url.replace("https://", "https://www."),
+  "http://localhost:3000",
+]);
+
+function corsHeaders(origin: string | null): HeadersInit {
+  if (origin && ALLOWED_ORIGINS.has(origin)) {
+    return {
+      "Access-Control-Allow-Origin": origin,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    };
+  }
+  return {};
+}
+
+export async function OPTIONS(request: Request) {
+  return new Response(null, { status: 204, headers: corsHeaders(request.headers.get("origin")) });
+}
+
 export async function POST(request: Request) {
+  const headers = corsHeaders(request.headers.get("origin"));
+
   let body: Partial<ContactPayload>;
   try {
     body = await request.json();
   } catch {
-    return Response.json({ error: "invalid_body" }, { status: 400 });
+    return Response.json({ error: "invalid_body" }, { status: 400, headers });
   }
 
   const { name, email, dates, partySize, message, company, locale } = body;
 
   // Honeypot: real users never fill this hidden field.
   if (company) {
-    return Response.json({ ok: true });
+    return Response.json({ ok: true }, { headers });
   }
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
-    return Response.json({ error: "missing_fields" }, { status: 400 });
+    return Response.json({ error: "missing_fields" }, { status: 400, headers });
   }
   if (!EMAIL_RE.test(email)) {
-    return Response.json({ error: "invalid_email" }, { status: 400 });
+    return Response.json({ error: "invalid_email" }, { status: 400, headers });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error("RESEND_API_KEY is not configured");
-    return Response.json({ error: "server_misconfigured" }, { status: 500 });
+    return Response.json({ error: "server_misconfigured" }, { status: 500, headers });
   }
 
   const resend = new Resend(apiKey);
   const isEs = locale === "es";
 
   const { error } = await resend.emails.send({
-    from: `Surfnsail Website <enquiries@${site.domain}>`,
+    from: `Surfnsail Website <enquiries@${site.emailDomain}>`,
     to: site.email,
     replyTo: email,
     subject: `${isEs ? "Nueva consulta" : "New enquiry"} — ${name}`,
@@ -64,14 +89,14 @@ export async function POST(request: Request) {
 
   if (error) {
     console.error("Resend error", error);
-    return Response.json({ error: "send_failed" }, { status: 502 });
+    return Response.json({ error: "send_failed" }, { status: 502, headers });
   }
 
   // Confirmation copy back to the client. Best-effort: the enquiry has
   // already reached the business above, so a failure here shouldn't fail
   // the whole request — just log it.
   const { error: confirmationError } = await resend.emails.send({
-    from: `${site.name} <enquiries@${site.domain}>`,
+    from: `${site.name} <enquiries@${site.emailDomain}>`,
     to: email,
     replyTo: site.email,
     subject: isEs ? "Hemos recibido tu consulta — Surfnsail" : "We've received your enquiry — Surfnsail",
@@ -101,5 +126,5 @@ export async function POST(request: Request) {
     console.error("Resend confirmation error", confirmationError);
   }
 
-  return Response.json({ ok: true });
+  return Response.json({ ok: true }, { headers });
 }
